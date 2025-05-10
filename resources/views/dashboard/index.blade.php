@@ -1,118 +1,215 @@
-@include('layout.head')
-@include('layout.header')
-@include('layout.sidebar')
+@include('dashboard.layout.head', ['title' => 'Dashboard'])
+@include('dashboard.layout.header')
+@include('dashboard.layout.sidebar')
 <div class="page-body">
+    <br>
+
+    <!-- Container-fluid starts-->
     <div class="container-fluid">
-        <div class="page-title">
-            <div class="row">
-                <div class="col-sm-6 col-12">
-                    <h2>Default Dashboard</h2>
-                    <p class="mb-0 text-title-gray">Selamat datang kembali! Mari kita lanjutkan dari tempat terakhir kamu berhenti.</p>
-                </div>
-                <div class="col-sm-6 col-12">
-                    <ol class="breadcrumb">
-                        {{-- <li class="breadcrumb-item"><a href="#">
-                            <i class="fi fi-rr-house-chimney"></i></a>
-                        </li> --}}
-                        <li class="breadcrumb-item active">Dashboard</li>
-                    </ol>
+        <div class="row">
+            <div class="col-sm-12 col-xl-4 box-col-6">
+                <div class="card">
+                    <div class="card-header card-no-border pb-0">
+                        <h3>Jumlah Kegiatan</h3>
+                    </div>
+                    <div class="card-body apex-chart">
+                        <div id="jumlahKegiatan"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Container-fluid starts-->
-    <div class="container-fluid default-dashboard">
-        <div class="row">
-            <div class="col-xl-12 proorder-xxl-1 col-sm-12 box-col-12">
-                <div class="card welcome-banner">
-                    <div class="card-header p-0 card-no-border">
-                        <div class="welcome-card"><img class="w-100 img-fluid"
-                                src="{{ asset('dashboard/assets') }}/images/dashboard-1/welcome-bg.png" alt="" /><img
-                                class="position-absolute img-1 img-fluid"
-                                src="{{ asset('dashboard/assets') }}/images/dashboard-1/img-1.png" alt="" /><img
-                                class="position-absolute img-2 img-fluid"
-                                src="{{ asset('dashboard/assets') }}/images/dashboard-1/img-2.png" alt="" /><img
-                                class="position-absolute img-3 img-fluid"
-                                src="{{ asset('dashboard/assets') }}/images/dashboard-1/img-3.png" alt="" /><img
-                                class="position-absolute img-4 img-fluid"
-                                src="{{ asset('dashboard/assets') }}/images/dashboard-1/img-4.png" alt="" /><img
-                                class="position-absolute img-5 img-fluid"
-                                src="{{ asset('dashboard/assets') }}/images/dashboard-1/img-5.png" alt="" />
-                        </div>
+            <div class="col-sm-12 col-xl-4 box-col-6">
+                <div class="card">
+                    <div class="card-header card-no-border pb-0">
+                        <h3>Jumlah Pendaftar</h3>
+                    </div>
+                    <div class="card-body apex-chart">
+                        <div id="jumlahPendaftar"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xl-4 box-col-6">
+                <div class="card">
+                    <div class="card-header card-no-border pb-0">
+                        <h3>Jumlah Diverifikasi</h3>
+                    </div>
+                    <div class="card-body apex-chart">
+                        <div id="jumlahDiverifikasi"></div>
+                    </div>
+                </div>
+            </div>
+            {{-- <div class="col-sm-12 col-xl-12 box-col-12">
+                <div class="card">
+                    <div class="card-header card-no-border pb-0">
+                        <h3>Data Pendaftaran</h3>
                     </div>
                     <div class="card-body">
-                        <div class="d-flex align-center">
-                            <h1>Hello, {{ Auth::user()->name }} <img src="{{ asset('dashboard/assets') }}/images/dashboard-1/hand.png"
-                                    alt="" /></h1>
-                        </div>
-                        <p> Selamat datang! Mari kita lanjutkan dari tempat terakhir kamu berhenti.</p>
-                        <div class="d-flex align-center justify-content-between"><a class="btn btn-pill btn-primary"
-                                href="#">Whats New!</a><span>
-                                     <h6 id="clock">Loading...</h6></span>
-                            </div>
-                    </div>
-                </div>
-            </div>
-            {{-- <div class="col-xxl-3 col-xl-4 proorder-xxl-2 col-sm-6 box-col-6">
-                <div class="card earning-card">
-                    <div class="card-header pb-0 card-no-border">
-                        <div class="header-top">
-                            <h3>Earnings Trend </h3>
-                        </div>
-                    </div>
-                    <div class="card-body pb-0">
-                        <div class="d-flex align-center gap-3">
-                            <h2>$4,875</h2><span class="text-primary">
-                                36.28%
-                                <svg class="stroke-icon stroke-primary">
-                                    <use
-                                        href="https://admin.pixelstrap.net/admiro/assets/svg/icon-sprite.svg#arrow-down">
-                                    </use>
-                                </svg></span>
-                        </div>
-                        <div id="earnings-chart"></div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-5 proorder-xxl-6 box-col-12">
-                <div class="card growthcard">
-                    <div class="card-body pb-0">
-                        <div id="growth-chart"></div>
+                        <div id="mixedchart"> </div>
                     </div>
                 </div>
             </div> --}}
         </div>
     </div>
+    <!-- Container-fluid ends-->
 </div>
-@include('layout.footer')
+
+@include('dashboard.layout.footer')
+
 <script>
-    function updateClock() {
-      const now = new Date();
+    var totalPengajian = @json($data['pengajian']->count());
 
-      let hours = now.getHours();
-      const minutes = now.getMinutes();
-      const seconds = now.getSeconds();
-      let period = "AM";
+    var totalTPA = @json($data['tpa']->count());
+    var totalKultum = @json($data['kultum']->count());
+    var totalMajelis = @json($data['majelis']->count());
+    var totalHariBesar = @json($data['haribesar']->count());
 
-      if (hours >= 12) {
-        period = "PM";
-      }
-      if (hours === 0) {
-        hours = 12;
-      } else if (hours > 12) {
-        hours -= 12;
-      }
+    var verifikasi = @json($data['verifikasi']);
+    var jumlahPendaftars = @json($data['verifikasi']->count());
 
-      const formattedTime =
-        (hours < 10 ? "0" + hours : hours) + ":" +
-        (minutes < 10 ? "0" + minutes : minutes) + ":" +
-        (seconds < 10 ? "0" + seconds : seconds) + " " + period;
 
-      document.getElementById("clock").innerText = "Jam Sekarang: " + formattedTime;
-    }
+    const kategoriCount = {};
+    const verifikatorCount = {};
 
-    setInterval(updateClock, 1000); // update setiap 1 detik
-    updateClock(); // panggil sekali di awal agar tidak delay 1 detik
-  </script>
+    verifikasi.forEach(item => {
+        const kategori = item.kategori;
+        kategoriCount[kategori] = (kategoriCount[kategori] || 0) + 1;
+    });
+
+    verifikasi.forEach(item => {
+        if (item.verified == 1) {
+            const kategori = item.kategori;
+            verifikatorCount[kategori] = (verifikatorCount[kategori] || 0) + 1;
+        }
+    });
+
+    // Siapkan data untuk chart
+    const labelsPendaftar = Object.keys(kategoriCount);
+    const seriesPendaftar = Object.values(kategoriCount);
+
+    const labelsDiverifikasi = Object.keys(verifikatorCount);
+    const seriesDiverifikasi = Object.values(verifikatorCount);
+
+
+
+    var jumlahKegiatan = {
+    chart: {
+        width: 380,
+        type: "pie",
+    },
+    labels: ["Pengajian", "TPA", "Kultum", "Majelis", "Hari Besar"],
+    series: [totalPengajian, totalTPA, totalKultum, totalMajelis, totalHariBesar],
+    responsive: [
+        {
+        breakpoint: 100,
+        options: {
+            chart: {
+            width: 200,
+            },
+            legend: {
+            show: false,
+            },
+        },
+        },
+    ],
+    colors: [
+            AdmiroAdminConfig.primary,
+            AdmiroAdminConfig.secondary,
+            "#3eb95f",
+            "#ea9200",
+            "#e74b2b",
+        ],
+    };
+
+    var jumlahKegiatans = new ApexCharts(document.querySelector("#jumlahKegiatan"), jumlahKegiatan);
+
+    jumlahKegiatans.render();
+
+    var jumlahPendaftar = {
+        chart: {
+            height: 250,
+            type: "radialBar",
+        },
+        plotOptions: {
+            radialBar: {
+            dataLabels: {
+                name: {
+                fontSize: "22px",
+                },
+                value: {
+                fontSize: "16px",
+                },
+                total: {
+                show: true,
+                label: "Total",
+                formatter: function (w) {
+                    return jumlahPendaftars;
+                },
+                },
+            },
+            },
+        },
+        series: seriesPendaftar,
+        labels: labelsPendaftar,
+        responsive: [
+            {
+            breakpoint: 480,
+            options: {
+                chart: {
+                height: 250,
+                },
+                legend: {
+                show: false,
+                },
+                plotOptions: {
+                radialBar: {
+                    dataLabels: {
+                    name: {
+                        offsetY: -1,
+                    },
+                    value: {
+                        offsetY: 4,
+                    },
+                    },
+                },
+                },
+            },
+            },
+        ],
+        colors: [
+            "#02a2b9",
+            "#3eb95f",
+            "#f39159",
+            "#308e87",
+        ],
+        };
+
+        var chart11 = new ApexCharts(document.querySelector("#jumlahPendaftar"), jumlahPendaftar);
+
+        chart11.render();
+
+        var options9 = {
+            chart: {
+                width: 380,
+                type: "donut",
+            },
+            labels: labelsDiverifikasi,
+            series: seriesDiverifikasi,
+            responsive: [
+                {
+                breakpoint: 480,
+                options: {
+                    chart: {
+                    width: 200,
+                    },
+                    legend: {
+                    show: false,
+                    },
+                },
+                },
+            ],
+            colors: ["#308e87", "#f39159", "#3eb95f", "#ea9200", "#e74b2b"],
+            };
+
+            var jumlahDiverifikasi = new ApexCharts(document.querySelector("#jumlahDiverifikasi"), options9);
+
+            jumlahDiverifikasi.render();
+</script>

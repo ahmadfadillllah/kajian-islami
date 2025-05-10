@@ -2302,11 +2302,11 @@ var options8 = {
     width: 380,
     type: "pie",
   },
-  labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
-  series: [44, 55, 13, 43, 22],
+  labels: ["Pengajian", "TPA", "Kultum", "Majelis", "Hari Besar"],
+  series: [1, 2, 3, 4, 5],
   responsive: [
     {
-      breakpoint: 480,
+      breakpoint: 100,
       options: {
         chart: {
           width: 200,
@@ -2336,6 +2336,7 @@ var options9 = {
     width: 380,
     type: "donut",
   },
+  labels: ["Pengajian", "TPA", "Kultum", "Majelis", "Hari Besar"],
   series: [44, 55, 41, 17, 15],
   responsive: [
     {

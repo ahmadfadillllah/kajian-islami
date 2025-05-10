@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    
+<!-- Mirrored from html.plurk.sbthemes.com/photography.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 May 2025 05:26:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Plurk – Tailwind CSS Multipurpose Landing Templates</title>
+        <!-- Favicon -->
+        <link rel="icon" type="icon" href="assets/images/favicon.png" />
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Swiper Slider -->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+        <!-- AOS Animation CSS -->
+        <link href="assets/css/aos.css" rel="stylesheet" />
+        <!-- FancyBox -->
+        <link rel="stylesheet" href="assets/css/fancybox.css" />
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
+
+    <body class="overflow-x-hidden">
+        <!-- screen loader -->
+        <div class="screen_loader fixed inset-0 z-[60] grid place-content-center bg-[#fafafa] dark:bg-[#060818]">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="200px"
+                height="200px"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="xMidYMid"
+            >
+                <circle cx="50" cy="50" r="0" fill="none" stroke="#47bdff" stroke-width="4">
+                    <animate
+                        attributeName="r"
+                        repeatCount="indefinite"
+                        dur="1s"
+                        values="0;16"
+                        keyTimes="0;1"
+                        keySplines="0 0.2 0.8 1"
+                        calcMode="spline"
+                        begin="0s"
+                    ></animate>
+                    <animate
+                        attributeName="opacity"
+                        repeatCount="indefinite"
+                        dur="1s"
+                        values="1;0"
+                        keyTimes="0;1"
+                        keySplines="0.2 0 0.8 1"
+                        calcMode="spline"
+                        begin="0s"
+                    ></animate>
+                </circle>
+                <circle cx="50" cy="50" r="0" fill="none" stroke="#b476e5" stroke-width="4">
+                    <animate
+                        attributeName="r"
+                        repeatCount="indefinite"
+                        dur="1s"
+                        values="0;16"
+                        keyTimes="0;1"
+                        keySplines="0 0.2 0.8 1"
+                        calcMode="spline"
+                        begin="-0.5s"
+                    ></animate>
+                    <animate
+                        attributeName="opacity"
+                        repeatCount="indefinite"
+                        dur="1s"
+                        values="1;0"
+                        keyTimes="0;1"
+                        keySplines="0.2 0 0.8 1"
+                        calcMode="spline"
+                        begin="-0.5s"
+                    ></animate>
+                </circle>
+            </svg>
+        </div>
+
+        <div
+            class="flex min-h-screen flex-col bg-white bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] font-mulish text-base font-normal text-gray antialiased dark:bg-[#101926] dark:from-transparent dark:to-transparent"
+        >
+            <header id="top-header" class="sticky top-0 z-50 bg-black/10 transition duration-300">
+                <div class="container">
+                    <div class="flex items-center justify-between py-5 lg:py-0">
+                        <a href="index.html"><img src="assets/images/logo.png" alt="logo" class="h-10" /></a>
+                        <div class="flex items-center">
+                            <div onclick="toggleMenu()" class="overlay fixed inset-0 z-[51] hidden bg-black/60 lg:hidden"></div>
+                            <div class="menus">
+                                <div class="border-b border-gray/10 ltr:text-right rtl:text-left lg:hidden">
+                                    <button onclick="toggleMenu()" type="button" class="p-4">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            class="h-6 w-6 text-black dark:text-white"
+                                        >
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li class="group relative">
+                                        <a href="javascript:;" class="active">
+                                            Landing
+                                            <div class="transition duration-500 group-hover:rotate-180 ltr:ml-2 rtl:mr-2">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M19 9L12 15L10.25 13.5M5 9L7.33333 11"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.5"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                    />
+                                                </svg>
+                                            </div>
+                                        </a>
+                                        <div class="submenu">
+                                            <a href="crypto.html">Crypto Currency</a>
+                                            <a href="modern-saas.html">Modern Saas </a>
+                                            <a href="real-estate.html">Real Estate </a>
+                                            <a href="healthcare.html">Health Care </a>
+                                            <a href="marketing.html">Sales Marketing </a>
+                                            <a href="application.html">Application </a>
+                                            <a href="hotel-resort.html">Hotel & Resort </a>
+                                            <a href="nft.html">NFT Marketplace </a>
+                                            <a href="online-courses.html"> Online Courses </a>
+                                            <a href="restaurant.html"> Restaurant </a>
+                                            <a href="consulting.html"> Consulting </a>
+                                            <a href="creative-agency.html"> Creative Agency </a>
+                                            <a href="insurance.html"> Insurance </a>
+                                            <a href="photography.html" class="active"> Photography </a>
+                                            <a href="construction.html"> Construction </a>
+                                            <a href="blog-landing.html"> Blog </a>
+                                            <a href="event-concert.html">
+                                                Event Concert
+                                                <span
+                                                    class="ml-1 whitespace-nowrap rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white"
+                                                >
+                                                    New
+                                                </span>
+                                            </a>
+                                            <a href="gym.html">
+                                                GYM
+                                                <span
+                                                    class="ml-1 whitespace-nowrap rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white"
+                                                >
+                                                    New
+                                                </span>
+                                            </a>
+                                            <a href="job-placement.html">
+                                                Job Placement
+                                                <span
+                                                    class="ml-1 whitespace-nowrap rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white"
+                                                >
+                                                    New
+                                                </span>
+                                            </a>
+                                            <a href="online-payments.html">
+                                                Online Payments
+                                                <span
+                                                    class="ml-1 whitespace-nowrap rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white"
+                                                >
+                                                    New
+                                                </span>
+                                            </a>
+                                            <a href="personal-portfolio.html">
+                                                Personal Portfolio
+                                                <span
+                                                    class="ml-1 whitespace-nowrap rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white"
+                                                >
+                                                    New
+                                                </span>
+                                            </a>
+                                            <a href="portfolio-landing.html">
+                                                Portfolio
+                                                <span
+                                                    class="ml-1 whitespace-nowrap rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white"
+                                                >
+                                                    New
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="portfolio.html">Portfolio</a>
+                                    </li>
+                                    <li>
+                                        <a href="services.html">Service</a>
+                                    </li>
+                                    <li>
+                                        <a href="team.html">Team</a>
+                                    </li>
+                                    <li>
+                                        <a href="about-us.html">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="career.html">Career</a>
+                                    </li>
+                                    <li
+                                        class="relative hidden items-center before:absolute before:top-1/2 before:h-[30px] before:w-[2px] before:-translate-y-1/2 before:bg-gray/30 ltr:pl-9 ltr:before:-left-[2px] rtl:pr-9 rtl:before:-right-[2px] lg:inline-flex"
+                                    >
+                                        <button type="button" onclick="search()" class="text-white hover:text-primary">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M18.7363 17.4637L14.6512 13.3785C15.6799 12.0753 16.3 10.4347 16.3 8.65C16.3 4.4317 12.8683 1 8.65 1C4.4317 1 1 4.4317 1 8.65C1 12.8683 4.4317 16.3 8.65 16.3C10.4356 16.3 12.0754 15.6808 13.3786 14.6512L17.4637 18.7363C17.6392 18.9118 17.8696 19 18.1 19C18.3304 19 18.5608 18.9118 18.7363 18.7363C19.0882 18.3844 19.0882 17.8156 18.7363 17.4637ZM2.8 8.65C2.8 5.4244 5.4244 2.8 8.65 2.8C11.8756 2.8 14.5 5.4244 14.5 8.65C14.5 11.8756 11.8756 14.5 8.65 14.5C5.4244 14.5 2.8 11.8756 2.8 8.65Z"
+                                                    fill="currentColor"
+                                                />
+                                            </svg>
+                                        </button>
+                                    </li>
+                                    <li
+                                        class="search-bar absolute hidden w-0 overflow-hidden bg-black transition-all duration-500 ltr:right-0 rtl:left-0 lg:block"
+                                    >
+                                        <form action="#" class="relative">
+                                            <input
+                                                type="text"
+                                                placeholder="Search"
+                                                class="w-full border-b border-white bg-transparent py-1 outline-none ltr:pl-2 ltr:pr-8 rtl:pr-2 rtl:pl-8"
+                                            />
+                                            <button
+                                                type="button"
+                                                class="absolute top-1/2 -translate-y-1/2 hover:text-primary ltr:right-0 rtl:left-0"
+                                                onclick="search()"
+                                            >
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    fill="none"
+                                                    viewBox="0 0 24 24"
+                                                    stroke-width="1.5"
+                                                    stroke="currentColor"
+                                                    class="h-6 w-6"
+                                                >
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                                </svg>
+                                            </button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                            <ul class="flex items-center gap-5 ltr:pr-5 rtl:pl-5 ltr:lg:pl-5 ltr:lg:pr-0 rtl:lg:pr-5 rtl:lg:pl-0">
+                                <li>
+                                    <button
+                                        type="button"
+                                        class="flex h-5 w-5 items-center text-white hover:text-primary rtl:text-primary"
+                                        onclick="toggleDirection()"
+                                    >
+                                        <svg width="17" height="22" viewBox="0 0 17 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16 18.9439H7.72074"
+                                                stroke="currentColor"
+                                                stroke-width="1.4"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M13.8571 21L16 18.9439L13.8571 16.8879"
+                                                stroke="currentColor"
+                                                stroke-width="1.4"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M1 16.4206H9.27926"
+                                                stroke="currentColor"
+                                                stroke-width="1.4"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M3.14287 18.4766L1 16.4206L3.14287 14.3645"
+                                                stroke="currentColor"
+                                                stroke-width="1.4"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M12.7855 1H5.82118C4.82662 1 3.87279 1.37909 3.16952 2.05387C2.46626 2.72865 2.07117 3.64385 2.07117 4.59813C2.07117 5.55242 2.46626 6.46761 3.16952 7.14239C3.87279 7.81717 4.82662 8.19626 5.82118 8.19626H6.3569"
+                                                stroke="currentColor"
+                                                stroke-width="1.4"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M10.6426 12.3084V1"
+                                                stroke="currentColor"
+                                                stroke-width="1.4"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M6.3573 12.3084V1"
+                                                stroke="currentColor"
+                                                stroke-width="1.4"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        type="button"
+                                        class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-dark text-white hover:text-primary"
+                                        onclick="toggleTheme()"
+                                    >
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="dark-mode-btn">
+                                            <path
+                                                d="M8 4C8 8.4 11.6 12 16 12C17.4 12 18.8 11.6 20 11C19.5 16.1 15.2 20 10 20C4.5 20 0 15.5 0 10C0 4.8 4 0.5 9 0C8.4 1.2 8 2.6 8 4ZM2 10C2 14.4 5.6 18 10 18C12.9 18 15.5 16.5 17 14C16.7 14 16.4 14 16 14C10.5 14 6 9.5 6 4C6 3.7 6 3.4 6 3C3.6 4.4 2 7.1 2 10Z"
+                                                fill="currentColor"
+                                            />
+                                        </svg>
+                                        <svg
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 20 20"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="light-mode-btn hidden"
+                                        >
+                                            <path
+                                                d="M10 15C8.67392 15 7.40215 14.4732 6.46447 13.5355C5.52678 12.5979 5 11.3261 5 10C5 8.67392 5.52678 7.40215 6.46447 6.46447C7.40215 5.52678 8.67392 5 10 5C11.3261 5 12.5979 5.52678 13.5355 6.46447C14.4732 7.40215 15 8.67392 15 10C15 11.3261 14.4732 12.5979 13.5355 13.5355C12.5979 14.4732 11.3261 15 10 15ZM10 13.3333C10.8841 13.3333 11.7319 12.9821 12.357 12.357C12.9821 11.7319 13.3333 10.8841 13.3333 10C13.3333 9.11595 12.9821 8.2681 12.357 7.64298C11.7319 7.01786 10.8841 6.66667 10 6.66667C9.11595 6.66667 8.2681 7.01786 7.64298 7.64298C7.01786 8.2681 6.66667 9.11595 6.66667 10C6.66667 10.8841 7.01786 11.7319 7.64298 12.357C8.2681 12.9821 9.11595 13.3333 10 13.3333Z"
+                                                fill="currentColor"
+                                            />
+                                            <path
+                                                d="M9.09091 0.909092C9.09091 0.407014 9.49792 0 10 0C10.5021 0 10.9091 0.407014 10.9091 0.909092V1.81818C10.9091 2.32026 10.5021 2.72727 10 2.72727C9.49792 2.72727 9.09091 2.32026 9.09091 1.81818V0.909092ZM9.09091 18.1818C9.09091 17.6797 9.49792 17.2727 10 17.2727C10.5021 17.2727 10.9091 17.6797 10.9091 18.1818V19.0909C10.9091 19.593 10.5021 20 10 20C9.49792 20 9.09091 19.593 9.09091 19.0909V18.1818ZM2.92909 4.21455C2.57412 3.85958 2.57412 3.28406 2.92909 2.92909C3.28406 2.57412 3.85958 2.57412 4.21455 2.92909L4.85727 3.57182C5.21224 3.92679 5.21224 4.5023 4.85727 4.85727C4.5023 5.21224 3.92679 5.21224 3.57182 4.85727L2.92909 4.21455ZM15.1427 16.4282C14.7878 16.0732 14.7878 15.4977 15.1427 15.1427C15.4977 14.7878 16.0732 14.7878 16.4282 15.1427L17.0709 15.7855C17.4259 16.1404 17.4259 16.7159 17.0709 17.0709C16.7159 17.4259 16.1404 17.4259 15.7855 17.0709L15.1427 16.4282ZM15.7851 2.92886C16.1402 2.57358 16.7161 2.57361 17.0712 2.92894C17.4261 3.28403 17.4259 3.85951 17.071 4.21447L16.4283 4.8572C16.0732 5.21221 15.4977 5.21221 15.1427 4.8572C14.7877 4.50225 14.7876 3.92678 15.1425 3.57174L15.7851 2.92886ZM3.57182 15.1427C3.92679 14.7878 4.5023 14.7878 4.85727 15.1427C5.21224 15.4977 5.21224 16.0732 4.85727 16.4282L4.21455 17.0709C3.85958 17.4259 3.28406 17.4259 2.92909 17.0709C2.57412 16.7159 2.57412 16.1404 2.92909 15.7855L3.57182 15.1427ZM19.0909 9.09091C19.593 9.09091 20 9.49792 20 10C20 10.5021 19.593 10.9091 19.0909 10.9091H18.1818C17.6797 10.9091 17.2727 10.5021 17.2727 10C17.2727 9.49792 17.6797 9.09091 18.1818 9.09091H19.0909ZM1.81818 9.09091C2.32026 9.09091 2.72727 9.49792 2.72727 10C2.72727 10.5021 2.32026 10.9091 1.81818 10.9091H0.909092C0.407014 10.9091 0 10.5021 0 10C0 9.49792 0.407014 9.09091 0.909092 9.09091H1.81818Z"
+                                                fill="currentColor"
+                                            />
+                                        </svg>
+                                    </button>
+                                </li>
+                            </ul>
+                            <button type="button" class="flex h-10 w-10 items-center justify-center rounded-full bg-primary lg:hidden" onclick="toggleMenu()">
+                                <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-white">
+                                    <path
+                                        d="M2 15H11C11.552 15 12 15.447 12 16C12 16.553 11.552 17 11 17H2C1.448 17 1 16.553 1 16C1 15.447 1.448 15 2 15Z"
+                                        fill="currentColor"
+                                    />
+                                    <path
+                                        d="M2 8H20C20.552 8 21 8.447 21 9C21 9.553 20.552 10 20 10H2C1.448 10 1 9.553 1 9C1 8.447 1.448 8 2 8Z"
+                                        fill="currentColor"
+                                    />
+                                    <path
+                                        d="M21 2C21 1.447 20.552 1 20 1H7C6.448 1 6 1.447 6 2C6 2.553 6.448 3 7 3H20C20.552 3 21 2.553 21 2Z"
+                                        fill="currentColor"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="-mt-[82px] flex-grow overflow-x-hidden lg:-mt-[106px]">
+                <div class="relative bg-black py-28 lg:py-44 xl:py-56">
+                    <img src="assets/images/photography/banner-img.jpg" alt="" class="absolute inset-0 h-full w-full object-cover rtl:rotate-y-180" />
+                    <div class="container relative z-[1]">
+                        <div class="max-w-[400px] space-y-5 text-white lg:max-w-[560px]">
+                            <p class="text-xl">Hello, I'm John.</p>
+
+                            <h2 class="text-4xl font-extrabold uppercase lg:text-6xl">Designed for <br /><span class="text-secondary">Photographers</span></h2>
+
+                            <p class="font-semibold lg:text-lg">
+                                Creating a professional website with features such as events and proofing galleries, Theme can provide you those features
+                                without the need to use any coding.
+                            </p>
+
+                            <a
+                                href="about-us.html"
+                                class="inline-flex rounded-lg bg-white px-8 py-5 text-sm font-extrabold uppercase text-black hover:bg-primary hover:text-white dark:text-white"
+                                >Purchase</a
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <section class="py-14 lg:py-[100px]" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="container">
+                        <div class="mb-8 text-center lg:mb-[50px]">
+                            <h6 class="mb-2 text-2xl font-black uppercase text-black dark:text-white md:text-3xl lg:text-[40px] lg:leading-[60px]">
+                                Latest
+                                <span class="text-primary">Works</span>
+                            </h6>
+                            <p class="lg:text-lg">Browse my most recent projects below and enjoy my handmade work with love for every detail.</p>
+                        </div>
+                        <div class="mb-7 overflow-x-auto pb-3 lg:mb-10">
+                            <ul class="filters photography-filter flex gap-5 whitespace-nowrap font-bold md:justify-center lg:gap-10">
+                                <li class="active filter" data-filter="all"><button type="button" class="px-5 py-4">All</button></li>
+                                <li class="filter" data-filter="studio">
+                                    <button type="button" class="px-5 py-4 transition">Studio</button>
+                                </li>
+                                <li class="filter" data-filter="wedding">
+                                    <button type="button" class="px-5 py-4 transition">Wedding</button>
+                                </li>
+                                <li class="filter" data-filter="travel">
+                                    <button type="button" class="px-5 py-4 transition">Travel wedding</button>
+                                </li>
+                                <li class="filter" data-filter="events">
+                                    <button type="button" class="px-5 py-4 transition">Events</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="projects grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                        <div class="project" data-filter="studio">
+                            <div class="group relative h-72 w-full cursor-pointer overflow-hidden bg-white xl:h-[450px]">
+                                <img src="assets/images/photography/img1.jpg" alt="project-1" class="h-full w-full object-cover" />
+                                <div
+                                    class="absolute inset-0 m-auto flex scale-0 items-center justify-center bg-black/60 text-white transition duration-700 group-hover:scale-100"
+                                >
+                                    <a
+                                        href="assets/images/photography/img1.jpg"
+                                        data-fancybox="gallery"
+                                        class="flex h-[60px] w-[60px] items-center justify-center border border-white text-white"
+                                    >
+                                        <svg class="h-8 w-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16 6.66663V25.3333"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M6.66667 16H25.3333"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project" data-filter="wedding">
+                            <div class="group relative h-72 w-full cursor-pointer overflow-hidden bg-white xl:h-[450px]">
+                                <img src="assets/images/photography/img2.jpg" alt="project-1" class="h-full w-full object-cover" />
+                                <div
+                                    class="absolute inset-0 m-auto flex scale-0 items-center justify-center bg-black/60 text-white transition duration-700 group-hover:scale-100"
+                                >
+                                    <a
+                                        href="assets/images/photography/img2.jpg"
+                                        data-fancybox="gallery"
+                                        class="flex h-[60px] w-[60px] items-center justify-center border border-white text-white"
+                                    >
+                                        <svg class="h-8 w-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16 6.66663V25.3333"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M6.66667 16H25.3333"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project" data-filter="travel">
+                            <div class="group relative h-72 w-full cursor-pointer overflow-hidden bg-white xl:h-[450px]">
+                                <img src="assets/images/photography/img3.jpg" alt="project-1" class="h-full w-full object-cover" />
+                                <div
+                                    class="absolute inset-0 m-auto flex scale-0 items-center justify-center bg-black/60 text-white transition duration-700 group-hover:scale-100"
+                                >
+                                    <a
+                                        href="assets/images/photography/img3.jpg"
+                                        data-fancybox="gallery"
+                                        class="flex h-[60px] w-[60px] items-center justify-center border border-white text-white"
+                                    >
+                                        <svg class="h-8 w-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16 6.66663V25.3333"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M6.66667 16H25.3333"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project" data-filter="events">
+                            <div class="group relative h-72 w-full cursor-pointer overflow-hidden bg-white xl:h-[450px]">
+                                <img src="assets/images/photography/img4.jpg" alt="project-1" class="h-full w-full object-cover" />
+                                <div
+                                    class="absolute inset-0 m-auto flex scale-0 items-center justify-center bg-black/60 text-white transition duration-700 group-hover:scale-100"
+                                >
+                                    <a
+                                        href="assets/images/photography/img4.jpg"
+                                        data-fancybox="gallery"
+                                        class="flex h-[60px] w-[60px] items-center justify-center border border-white text-white"
+                                    >
+                                        <svg class="h-8 w-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16 6.66663V25.3333"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M6.66667 16H25.3333"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project" data-filter="studio">
+                            <div class="group relative h-72 w-full cursor-pointer overflow-hidden bg-white xl:h-[450px]">
+                                <img src="assets/images/photography/img5.jpg" alt="project-1" class="h-full w-full object-cover" />
+                                <div
+                                    class="absolute inset-0 m-auto flex scale-0 items-center justify-center bg-black/60 text-white transition duration-700 group-hover:scale-100"
+                                >
+                                    <a
+                                        href="assets/images/photography/img5.jpg"
+                                        data-fancybox="gallery"
+                                        class="flex h-[60px] w-[60px] items-center justify-center border border-white text-white"
+                                    >
+                                        <svg class="h-8 w-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16 6.66663V25.3333"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M6.66667 16H25.3333"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project" data-filter="wedding">
+                            <div class="group relative h-72 w-full cursor-pointer overflow-hidden bg-white xl:h-[450px]">
+                                <img src="assets/images/photography/img6.jpg" alt="project-1" class="h-full w-full object-cover" />
+                                <div
+                                    class="absolute inset-0 m-auto flex scale-0 items-center justify-center bg-black/60 text-white transition duration-700 group-hover:scale-100"
+                                >
+                                    <a
+                                        href="assets/images/photography/img6.jpg"
+                                        data-fancybox="gallery"
+                                        class="flex h-[60px] w-[60px] items-center justify-center border border-white text-white"
+                                    >
+                                        <svg class="h-8 w-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16 6.66663V25.3333"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M6.66667 16H25.3333"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project" data-filter="travel">
+                            <div class="group relative h-72 w-full cursor-pointer overflow-hidden bg-white xl:h-[450px]">
+                                <img src="assets/images/photography/img7.jpg" alt="project-1" class="h-full w-full object-cover" />
+                                <div
+                                    class="absolute inset-0 m-auto flex scale-0 items-center justify-center bg-black/60 text-white transition duration-700 group-hover:scale-100"
+                                >
+                                    <a
+                                        href="assets/images/photography/img7.jpg"
+                                        data-fancybox="gallery"
+                                        class="flex h-[60px] w-[60px] items-center justify-center border border-white text-white"
+                                    >
+                                        <svg class="h-8 w-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16 6.66663V25.3333"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M6.66667 16H25.3333"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project" data-filter="events">
+                            <div class="group relative h-72 w-full cursor-pointer overflow-hidden bg-white xl:h-[450px]">
+                                <img src="assets/images/photography/img8.jpg" alt="project-1" class="h-full w-full object-cover" />
+                                <div
+                                    class="absolute inset-0 m-auto flex scale-0 items-center justify-center bg-black/60 text-white transition duration-700 group-hover:scale-100"
+                                >
+                                    <a
+                                        href="assets/images/photography/img8.jpg"
+                                        data-fancybox="gallery"
+                                        class="flex h-[60px] w-[60px] items-center justify-center border border-white text-white"
+                                    >
+                                        <svg class="h-8 w-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16 6.66663V25.3333"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M6.66667 16H25.3333"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bg-black bg-[url(../images/photography/our_bg.png)] bg-cover bg-center bg-no-repeat py-14 lg:py-[100px]">
+                    <div class="container">
+                        <div class="text-center" data-aos="zoom-in" data-aos-duration="1000">
+                            <h3 class="mb-5 text-3xl font-extrabold uppercase text-secondary">OUR PHILOSOPHY</h3>
+
+                            <p class="mb-7 font-semibold text-white lg:mb-11 lg:text-xl">
+                                We are fine-art, wedding & portrait film photographers from Oregon, with a special love for natural light,medium format film
+                                cameras & redheads with freckles. With over 5 years of experience, numerous workshops and features in top wedding publications,
+                                I capture beauty in the most subtle.
+                            </p>
+
+                            <a href="#" class="inline-flex rounded-lg bg-primary px-8 py-5 text-sm font-extrabold uppercase text-white hover:bg-secondary"
+                                >Purchase</a
+                            >
+                        </div>
+                    </div>
+                </section>
+
+                <section class="relative overflow-hidden py-14 lg:py-[100px]">
+                    <img src="assets/images/photography/img.png" alt="" class="absolute -top-5 left-0 max-w-[80px] md:max-w-[150px] xl:max-w-none" />
+                    <img src="assets/images/photography/img.png" alt="" class="absolute -top-5 right-0 max-w-[80px] rotate-90 md:max-w-[150px] xl:max-w-none" />
+                    <div class="container relative z-[1]" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="mb-[50px] text-center">
+                            <h6 class="mb-2 text-2xl font-black uppercase text-black dark:text-white md:text-3xl lg:text-[40px] lg:leading-[60px]">
+                                EXQUISITE <span class="text-primary">ELEGANCE</span>
+                            </h6>
+                            <p class="lg:text-lg">Engagements, Weddings, Elopments</p>
+                        </div>
+
+                        <div class="grid gap-4 md:grid-cols-3 lg:gap-7">
+                            <div class="md:col-span-2">
+                                <div class="mb-4 grid gap-4 sm:grid-cols-2 lg:mb-7 lg:gap-7">
+                                    <div class="group relative h-60 overflow-hidden lg:h-[350px]">
+                                        <img
+                                            src="assets/images/photography/photo1.jpg"
+                                            alt=""
+                                            class="h-full w-full scale-100 object-cover duration-300 group-hover:scale-110"
+                                        />
+                                        <a
+                                            href="#"
+                                            class="absolute bottom-0 left-0 inline-flex bg-white px-6 py-3.5 font-semibold leading-none text-black duration-300 group-hover:bg-secondary group-hover:text-white lg:text-xl"
+                                            >Outdoor</a
+                                        >
+                                    </div>
+                                    <div class="group relative h-60 overflow-hidden lg:h-[350px]">
+                                        <img
+                                            src="assets/images/photography/photo2.jpg"
+                                            alt=""
+                                            class="h-full w-full scale-100 object-cover duration-300 group-hover:scale-110"
+                                        />
+                                        <a
+                                            href="#"
+                                            class="absolute bottom-0 left-0 inline-flex bg-white px-6 py-3.5 font-semibold leading-none text-black duration-300 group-hover:bg-secondary group-hover:text-white lg:text-xl"
+                                            >Indoor</a
+                                        >
+                                    </div>
+                                </div>
+                                <div class="group relative h-60 overflow-hidden lg:h-[350px]">
+                                    <img
+                                        src="assets/images/photography/photo3.jpg"
+                                        alt=""
+                                        class="h-full w-full scale-100 object-cover duration-300 group-hover:scale-110"
+                                    />
+                                    <a
+                                        href="#"
+                                        class="absolute bottom-0 left-0 inline-flex bg-white px-6 py-3.5 font-semibold leading-none text-black duration-300 group-hover:bg-secondary group-hover:text-white lg:text-xl"
+                                        >Travel wedding</a
+                                    >
+                                </div>
+                            </div>
+                            <div class="group relative h-[496px] overflow-hidden lg:h-[730px]">
+                                <img
+                                    src="assets/images/photography/photo4.jpg"
+                                    alt=""
+                                    class="h-full w-full scale-100 object-cover duration-300 group-hover:scale-110"
+                                />
+                                <a
+                                    href="#"
+                                    class="absolute bottom-0 left-0 inline-flex bg-white px-6 py-3.5 font-semibold leading-none text-black duration-300 group-hover:bg-secondary group-hover:text-white lg:text-xl"
+                                    >Destination</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bg-black py-14 dark:bg-gray-dark lg:py-[100px]">
+                    <div class="container">
+                        <div class="relative">
+                            <div class="flex flex-col items-center justify-between gap-[73px] lg:flex-row">
+                                <div data-aos="fade-right" data-aos-duration="1000">
+                                    <div class="heading mb-0 text-center ltr:lg:text-left rtl:lg:text-right">
+                                        <h4 class="!font-black uppercase !text-white">What <span class="text-primary">our customers</span> are saying us?</h4>
+                                    </div>
+                                    <p class="mt-2.5 text-center text-lg font-medium ltr:lg:text-left rtl:lg:text-right">
+                                        lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh.
+                                    </p>
+                                    <div class="mt-7 flex justify-center gap-16 lg:justify-start">
+                                        <div>
+                                            <h2 class="text-3xl font-black text-white">13M <span class="text-secondary">+</span></h2>
+                                            <p class="mt-1 text-sm font-bold">happy people</p>
+                                        </div>
+                                        <div>
+                                            <h2 class="text-3xl font-black text-white">4.88</h2>
+                                            <p class="mt-1 text-sm font-bold">overall rating</p>
+                                            <span class="mt-5">
+                                                <svg width="85" height="12" viewBox="0 0 85 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M4.7919 2.04503C5.55189 0.681675 5.93188 0 6.5 0C7.06812 0 7.44811 0.681675 8.2081 2.04502L8.40472 2.39774C8.62069 2.78516 8.72867 2.97887 8.89703 3.10668C9.0654 3.2345 9.27509 3.28194 9.69447 3.37683L10.0763 3.46322C11.5521 3.79713 12.29 3.96409 12.4655 4.52864C12.6411 5.09319 12.1381 5.68144 11.1319 6.85795L10.8716 7.16233C10.5857 7.49666 10.4428 7.66383 10.3785 7.87063C10.3142 8.07743 10.3358 8.30047 10.379 8.74653L10.4184 9.15264C10.5705 10.7224 10.6465 11.5072 10.1869 11.8561C9.72729 12.205 9.0364 11.8869 7.6546 11.2507L7.29711 11.0861C6.90445 10.9053 6.70811 10.8149 6.5 10.8149C6.29189 10.8149 6.09556 10.9053 5.70289 11.0861L5.3454 11.2507C3.96361 11.8869 3.27271 12.205 2.81309 11.8561C2.35347 11.5072 2.42953 10.7224 2.58164 9.15264L2.62099 8.74653C2.66422 8.30047 2.68583 8.07743 2.62152 7.87063C2.55721 7.66383 2.41426 7.49666 2.12835 7.16233L1.86806 6.85796C0.861949 5.68144 0.358895 5.09319 0.534453 4.52864C0.71001 3.96409 1.44791 3.79713 2.92372 3.46322L3.30553 3.37683C3.72491 3.28194 3.9346 3.2345 4.10297 3.10668C4.27133 2.97887 4.37932 2.78516 4.59528 2.39774L4.7919 2.04503Z"
+                                                        fill="#F1A501"
+                                                    />
+                                                    <path
+                                                        d="M22.7919 2.04503C23.5519 0.681675 23.9319 0 24.5 0C25.0681 0 25.4481 0.681675 26.2081 2.04502L26.4047 2.39774C26.6207 2.78516 26.7287 2.97887 26.897 3.10668C27.0654 3.2345 27.2751 3.28194 27.6945 3.37683L28.0763 3.46322C29.5521 3.79713 30.29 3.96409 30.4655 4.52864C30.6411 5.09319 30.1381 5.68144 29.1319 6.85795L28.8716 7.16233C28.5857 7.49666 28.4428 7.66383 28.3785 7.87063C28.3142 8.07743 28.3358 8.30047 28.379 8.74653L28.4184 9.15264C28.5705 10.7224 28.6465 11.5072 28.1869 11.8561C27.7273 12.205 27.0364 11.8869 25.6546 11.2507L25.2971 11.0861C24.9044 10.9053 24.7081 10.8149 24.5 10.8149C24.2919 10.8149 24.0956 10.9053 23.7029 11.0861L23.3454 11.2507C21.9636 11.8869 21.2727 12.205 20.8131 11.8561C20.3535 11.5072 20.4295 10.7224 20.5816 9.15264L20.621 8.74653C20.6642 8.30047 20.6858 8.07743 20.6215 7.87063C20.5572 7.66383 20.4143 7.49666 20.1284 7.16233L19.8681 6.85796C18.8619 5.68144 18.3589 5.09319 18.5345 4.52864C18.71 3.96409 19.4479 3.79713 20.9237 3.46322L21.3055 3.37683C21.7249 3.28194 21.9346 3.2345 22.103 3.10668C22.2713 2.97887 22.3793 2.78516 22.5953 2.39774L22.7919 2.04503Z"
+                                                        fill="#F1A501"
+                                                    />
+                                                    <path
+                                                        d="M40.7919 2.04503C41.5519 0.681675 41.9319 0 42.5 0C43.0681 0 43.4481 0.681675 44.2081 2.04502L44.4047 2.39774C44.6207 2.78516 44.7287 2.97887 44.897 3.10668C45.0654 3.2345 45.2751 3.28194 45.6945 3.37683L46.0763 3.46322C47.5521 3.79713 48.29 3.96409 48.4655 4.52864C48.6411 5.09319 48.1381 5.68144 47.1319 6.85795L46.8716 7.16233C46.5857 7.49666 46.4428 7.66383 46.3785 7.87063C46.3142 8.07743 46.3358 8.30047 46.379 8.74653L46.4184 9.15264C46.5705 10.7224 46.6465 11.5072 46.1869 11.8561C45.7273 12.205 45.0364 11.8869 43.6546 11.2507L43.2971 11.0861C42.9044 10.9053 42.7081 10.8149 42.5 10.8149C42.2919 10.8149 42.0956 10.9053 41.7029 11.0861L41.3454 11.2507C39.9636 11.8869 39.2727 12.205 38.8131 11.8561C38.3535 11.5072 38.4295 10.7224 38.5816 9.15264L38.621 8.74653C38.6642 8.30047 38.6858 8.07743 38.6215 7.87063C38.5572 7.66383 38.4143 7.49666 38.1284 7.16233L37.8681 6.85796C36.8619 5.68144 36.3589 5.09319 36.5345 4.52864C36.71 3.96409 37.4479 3.79713 38.9237 3.46322L39.3055 3.37683C39.7249 3.28194 39.9346 3.2345 40.103 3.10668C40.2713 2.97887 40.3793 2.78516 40.5953 2.39774L40.7919 2.04503Z"
+                                                        fill="#F1A501"
+                                                    />
+                                                    <path
+                                                        d="M58.7919 2.04503C59.5519 0.681675 59.9319 0 60.5 0C61.0681 0 61.4481 0.681675 62.2081 2.04502L62.4047 2.39774C62.6207 2.78516 62.7287 2.97887 62.897 3.10668C63.0654 3.2345 63.2751 3.28194 63.6945 3.37683L64.0763 3.46322C65.5521 3.79713 66.29 3.96409 66.4655 4.52864C66.6411 5.09319 66.1381 5.68144 65.1319 6.85795L64.8716 7.16233C64.5857 7.49666 64.4428 7.66383 64.3785 7.87063C64.3142 8.07743 64.3358 8.30047 64.379 8.74653L64.4184 9.15264C64.5705 10.7224 64.6465 11.5072 64.1869 11.8561C63.7273 12.205 63.0364 11.8869 61.6546 11.2507L61.2971 11.0861C60.9044 10.9053 60.7081 10.8149 60.5 10.8149C60.2919 10.8149 60.0956 10.9053 59.7029 11.0861L59.3454 11.2507C57.9636 11.8869 57.2727 12.205 56.8131 11.8561C56.3535 11.5072 56.4295 10.7224 56.5816 9.15264L56.621 8.74653C56.6642 8.30047 56.6858 8.07743 56.6215 7.87063C56.5572 7.66383 56.4143 7.49666 56.1284 7.16233L55.8681 6.85796C54.8619 5.68144 54.3589 5.09319 54.5345 4.52864C54.71 3.96409 55.4479 3.79713 56.9237 3.46322L57.3055 3.37683C57.7249 3.28194 57.9346 3.2345 58.103 3.10668C58.2713 2.97887 58.3793 2.78516 58.5953 2.39774L58.7919 2.04503Z"
+                                                        fill="#F1A501"
+                                                    />
+                                                    <path
+                                                        opacity="0.3"
+                                                        d="M76.7919 2.04503C77.5519 0.681675 77.9319 0 78.5 0C79.0681 0 79.4481 0.681675 80.2081 2.04502L80.4047 2.39774C80.6207 2.78516 80.7287 2.97887 80.897 3.10668C81.0654 3.2345 81.2751 3.28194 81.6945 3.37683L82.0763 3.46322C83.5521 3.79713 84.29 3.96409 84.4655 4.52864C84.6411 5.09319 84.1381 5.68144 83.1319 6.85795L82.8716 7.16233C82.5857 7.49666 82.4428 7.66383 82.3785 7.87063C82.3142 8.07743 82.3358 8.30047 82.379 8.74653L82.4184 9.15264C82.5705 10.7224 82.6465 11.5072 82.1869 11.8561C81.7273 12.205 81.0364 11.8869 79.6546 11.2507L79.2971 11.0861C78.9044 10.9053 78.7081 10.8149 78.5 10.8149C78.2919 10.8149 78.0956 10.9053 77.7029 11.0861L77.3454 11.2507C75.9636 11.8869 75.2727 12.205 74.8131 11.8561C74.3535 11.5072 74.4295 10.7224 74.5816 9.15264L74.621 8.74653C74.6642 8.30047 74.6858 8.07743 74.6215 7.87063C74.5572 7.66383 74.4143 7.49666 74.1284 7.16233L73.8681 6.85796C72.8619 5.68144 72.3589 5.09319 72.5345 4.52864C72.71 3.96409 73.4479 3.79713 74.9237 3.46322L75.3055 3.37683C75.7249 3.28194 75.9346 3.2345 76.103 3.10668C76.2713 2.97887 76.3793 2.78516 76.5953 2.39774L76.7919 2.04503Z"
+                                                        fill="#7780A1"
+                                                    />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="relative mx-auto w-full max-w-[445px] rounded-[10px] bg-gray-dark drop-shadow-[6px_6px_0px_rgba(119,128,161,0.3)] dark:bg-black"
+                                    data-aos="zoom-left"
+                                    data-aos-duration="1000"
+                                >
+                                    <div class="swiper feedback-slider">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="flex justify-between gap-7 p-7">
+                                                    <div class="flex items-center gap-2.5">
+                                                        <div
+                                                            class="flex h-14 w-14 items-end justify-center overflow-hidden rounded-full border border-[rgba(125,132,150,0.2)] bg-gradient-to-t from-[rgba(125,132,150,0.1)] to-[125,132,150] px-1 pt-2"
+                                                        >
+                                                            <img src="assets/images/photography/customer-avatar.svg" alt="" />
+                                                        </div>
+                                                        <div>
+                                                            <h5 class="text-lg font-bold text-white">amelia smith</h5>
+                                                            <p class="text-sm font-bold italic">customer</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="border border-gray/10"></div>
+                                                <div class="p-7">
+                                                    <h3 class="text-lg font-bold italic text-white">new bungalow house</h3>
+                                                    <p class="mt-4 text-base font-semibold leading-7">
+                                                        “It is a long established fact that a reader will be distracted by the readable content of a page when
+                                                        looking at its layout.”
+                                                    </p>
+                                                    <div class="text-right">
+                                                        <p class="mt-7 inline-flex rounded-[10px] bg-[#7780A1]/20 p-2 text-sm font-semibold text-white">
+                                                            San Diego, California
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="absolute top-7 z-10 flex gap-2.5 ltr:right-7 rtl:left-7">
+                                        <a
+                                            href="javascript:"
+                                            class="feedback-slider-button-prev flex h-8 w-8 items-center justify-center bg-white/10 text-white duration-200 after:hidden hover:bg-black hover:text-white dark:bg-white/80 dark:hover:bg-secondary"
+                                        >
+                                            <svg width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="rtl:rotate-180">
+                                                <path
+                                                    d="M7 16L1 9L2.5 7.25M7 2L5 4.33333"
+                                                    stroke="currentcolor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="square"
+                                                    stroke-linejoin="round"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                        <a
+                                            href="javascript:"
+                                            class="feedback-slider-button-next flex h-8 w-8 items-center justify-center bg-white/10 text-white duration-200 after:hidden hover:bg-black hover:text-white dark:bg-white/80 dark:hover:bg-secondary"
+                                        >
+                                            <svg width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="rtl:rotate-180">
+                                                <path
+                                                    d="M2 2L4 4.33333M2 16L8 9L6.5 7.25"
+                                                    stroke="currentcolor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="square"
+                                                    stroke-linejoin="round"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="overflow-hidden py-14 lg:py-[100px]">
+                    <div class="container">
+                        <div class="mb-8 text-center lg:mb-[50px]">
+                            <h6 class="mb-2 text-2xl font-black uppercase text-black dark:text-white md:text-3xl lg:text-[40px] lg:leading-[60px]">
+                                OUR
+                                <span class="text-secondary">TEAM</span>
+                            </h6>
+                            <p class="lg:text-lg">Browse my most recent projects below and enjoy my handmade work with love for every detail.</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper our-team px-4 md:-mx-32 md:px-0 lg:-mx-52">
+                        <div class="swiper-wrapper items-center">
+                            <div class="swiper-slide group">
+                                <div class="mb-7 h-full w-full overflow-hidden">
+                                    <img
+                                        src="assets/images/photography/slider1.jpg"
+                                        alt=""
+                                        class="h-full w-full scale-100 object-cover duration-300 hover:scale-110"
+                                    />
+                                </div>
+                                <div class="text-center">
+                                    <h4 class="mb-4 text-2xl font-bold text-black group-hover:text-primary dark:text-white xl:text-3xl">Jessy Rose</h4>
+                                    <p>Photographar</p>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide group">
+                                <div class="mb-7 h-full w-full overflow-hidden">
+                                    <img
+                                        src="assets/images/photography/slider2.jpg"
+                                        alt=""
+                                        class="h-full w-full scale-100 object-cover duration-300 hover:scale-110"
+                                    />
+                                </div>
+                                <div class="text-center">
+                                    <h4 class="mb-4 text-2xl font-bold text-black group-hover:text-primary dark:text-white xl:text-3xl">Mike Farrell</h4>
+                                    <p>Photographar</p>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide group">
+                                <div class="mb-7 h-full w-full overflow-hidden">
+                                    <img
+                                        src="assets/images/photography/slider3.jpg"
+                                        alt=""
+                                        class="h-full w-full scale-100 object-cover duration-300 hover:scale-110"
+                                    />
+                                </div>
+                                <div class="text-center">
+                                    <h4 class="mb-4 text-2xl font-bold text-black group-hover:text-primary dark:text-white xl:text-3xl">Blanche Fields</h4>
+                                    <p>Photographar</p>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide group">
+                                <div class="mb-7 h-full w-full overflow-hidden">
+                                    <img
+                                        src="assets/images/photography/slider4.jpg"
+                                        alt=""
+                                        class="h-full w-full scale-100 object-cover duration-300 hover:scale-110"
+                                    />
+                                </div>
+                                <div class="text-center">
+                                    <h4 class="mb-4 text-2xl font-bold text-black group-hover:text-primary dark:text-white xl:text-3xl">Mike Farrell</h4>
+                                    <p>Photographar</p>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide group">
+                                <div class="mb-7 h-full w-full overflow-hidden">
+                                    <img
+                                        src="assets/images/photography/slider5.jpg"
+                                        alt=""
+                                        class="h-full w-full scale-100 object-cover duration-300 hover:scale-110"
+                                    />
+                                </div>
+                                <div class="text-center">
+                                    <h4 class="mb-4 text-2xl font-bold text-black group-hover:text-primary dark:text-white xl:text-3xl">Camilia Shean</h4>
+                                    <p>Photographar</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bg-black py-14 dark:bg-gray-dark lg:py-[100px]">
+                    <div class="container">
+                        <div class="items-center gap-5 md:flex">
+                            <div class="mb-10 flex-none space-y-5 md:mb-0 md:max-w-[430px]" data-aos="fade-right" data-aos-duration="1000">
+                                <h2 class="text-2xl font-black uppercase text-white md:text-3xl lg:text-[40px]">
+                                    My Best
+                                    <span class="text-primary">Snaps</span>
+                                </h2>
+
+                                <p class="lg:text-lg">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet hendrerit nisl. Nam eu dolor pellentesque,
+                                    tincidunt lorem id.
+                                </p>
+
+                                <ul class="flex gap-5">
+                                    <li>
+                                        <a href="#" class="duration-300 hover:opacity-50"><img src="assets/images/photography/logo1.svg" alt="" /></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="duration-300 hover:opacity-50"><img src="assets/images/photography/logo2.svg" alt="" /></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="duration-300 hover:opacity-50"><img src="assets/images/photography/logo3.svg" alt="" /></a>
+                                    </li>
+                                </ul>
+
+                                <a
+                                    href="about-us.html"
+                                    class="inline-flex rounded-lg bg-secondary px-8 py-5 text-sm font-extrabold uppercase text-white hover:bg-primary"
+                                    >Explore More</a
+                                >
+                            </div>
+                            <div class="swiper best-snaps flex-1" data-aos="fade-left" data-aos-duration="1000">
+                                <div class="swiper-wrapper items-center">
+                                    <div class="swiper-slide overflow-hidden">
+                                        <img
+                                            src="assets/images/photography/slider6.jpg"
+                                            alt=""
+                                            class="h-80 w-full scale-100 object-cover duration-300 hover:scale-110 xl:h-[445px]"
+                                        />
+                                    </div>
+                                    <div class="swiper-slide overflow-hidden">
+                                        <img
+                                            src="assets/images/photography/slider7.jpg"
+                                            alt=""
+                                            class="h-80 w-full scale-100 object-cover duration-300 hover:scale-110 xl:h-[445px]"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="py-14 lg:py-[100px]">
+                    <div class="container">
+                        <div class="mb-12 flex flex-col items-start justify-between gap-5 md:flex-row md:items-center">
+                            <div class="flex-none md:w-2/3">
+                                <h2 class="mb-2 text-2xl font-black uppercase leading-tight text-black dark:text-white md:text-3xl lg:text-[40px]">
+                                    BLOG
+                                    <span class="text-secondary">UPDATED</span>
+                                </h2>
+
+                                <p class="text-lg">With over 5 years of experience, numerous workshops and features in top wedding publications.</p>
+                            </div>
+                            <a
+                                href="about-us.html"
+                                class="inline-flex shrink whitespace-nowrap rounded-lg bg-primary px-8 py-5 text-sm font-extrabold uppercase text-white hover:bg-secondary"
+                                >Read More blog</a
+                            >
+                        </div>
+
+                        <div class="grid gap-6 md:grid-cols-3">
+                            <div class="group overflow-hidden rounded-xl bg-white dark:bg-gray-dark">
+                                <a href="#" class="block h-60 overflow-hidden">
+                                    <img
+                                        src="assets/images/photography/blog1.jpg"
+                                        alt=""
+                                        class="h-full w-full scale-100 object-cover duration-300 group-hover:scale-110"
+                                    />
+                                </a>
+                                <div class="space-y-3.5 p-5">
+                                    <p class="font-semibold text-secondary">November 28, 2022</p>
+
+                                    <h4>
+                                        <a href="#" class="text-lg font-extrabold text-black hover:text-primary dark:text-white"
+                                            >What inside you & what you see in people.</a
+                                        >
+                                    </h4>
+
+                                    <p>Lorem ipsum dolor amet consectetur adipisicing elit eiusm tempor incididunt...</p>
+                                </div>
+                            </div>
+
+                            <div class="group overflow-hidden rounded-xl bg-white dark:bg-gray-dark">
+                                <a href="#" class="block h-60 overflow-hidden">
+                                    <img
+                                        src="assets/images/photography/blog2.jpg"
+                                        alt=""
+                                        class="h-full w-full scale-100 object-cover duration-300 group-hover:scale-110"
+                                    />
+                                </a>
+                                <div class="space-y-3.5 p-5">
+                                    <p class="font-semibold text-secondary">November 28, 2022</p>
+
+                                    <h4>
+                                        <a href="#" class="text-lg font-extrabold text-black hover:text-primary dark:text-white"
+                                            >What your friends think about photographers</a
+                                        >
+                                    </h4>
+
+                                    <p>Lorem ipsum dolor amet consectetur adipisicing elit eiusm tempor incididunt...</p>
+                                </div>
+                            </div>
+
+                            <div class="group overflow-hidden rounded-xl bg-white dark:bg-gray-dark">
+                                <a href="#" class="block h-60 overflow-hidden">
+                                    <img
+                                        src="assets/images/photography/blog3.jpg"
+                                        alt=""
+                                        class="h-full w-full scale-100 object-cover duration-300 group-hover:scale-110"
+                                    />
+                                </a>
+                                <div class="space-y-3.5 p-5">
+                                    <p class="font-semibold text-secondary">November 28, 2022</p>
+
+                                    <h4><a href="#" class="text-lg font-extrabold text-black hover:text-primary dark:text-white">White dreams</a></h4>
+
+                                    <p>Lorem ipsum dolor amet consectetur adipisicing elit eiusm tempor incididunt...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <footer class="mt-auto bg-white dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.03] dark:to-transparent">
+                <div class="container">
+                    <div class="grid gap-y-10 gap-x-4 py-14 sm:grid-cols-3 lg:grid-cols-5 lg:py-[100px]">
+                        <div class="relative">
+                            <img src="assets/images/logo.png" alt="plurk" class="h-7" />
+                            <ul class="mt-12 flex items-center gap-8">
+                                <li>
+                                    <a href="javascript:">
+                                        <svg
+                                            width="10"
+                                            height="20"
+                                            viewBox="0 0 10 20"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="transition hover:scale-110 hover:text-secondary"
+                                        >
+                                            <path
+                                                d="M8.0733 3.29509H9.88498V0.139742C9.57242 0.0967442 8.49748 0 7.2456 0C4.6335 0 2.84415 1.643 2.84415 4.66274V7.44186H-0.0383301V10.9693H2.84415V19.845H6.37821V10.9701H9.1441L9.58317 7.44269H6.37738V5.01251C6.37821 3.99297 6.65273 3.29509 8.0733 3.29509Z"
+                                                fill="currentColor"
+                                            />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:">
+                                        <svg
+                                            width="23"
+                                            height="18"
+                                            viewBox="0 0 23 18"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="transition hover:scale-110 hover:text-secondary"
+                                        >
+                                            <path
+                                                d="M22.8849 2.11613C22.0668 2.475 21.1951 2.71288 20.2862 2.82838C21.2212 2.27013 21.9348 1.39287 22.2703 0.3355C21.3986 0.85525 20.4361 1.22238 19.4103 1.42725C18.5826 0.545875 17.4028 0 16.1158 0C13.6188 0 11.6086 2.02675 11.6086 4.51137C11.6086 4.86888 11.6388 5.21263 11.7131 5.53988C7.96345 5.357 4.64557 3.55988 2.4167 0.82225C2.02757 1.49738 1.79932 2.27012 1.79932 3.102C1.79932 4.664 2.6037 6.04862 3.8027 6.85025C3.07807 6.8365 2.3672 6.62613 1.76495 6.29475C1.76495 6.3085 1.76495 6.32638 1.76495 6.34425C1.76495 8.536 3.32832 10.3565 5.37845 10.7759C5.01132 10.8763 4.6112 10.9244 4.19595 10.9244C3.9072 10.9244 3.6157 10.9079 3.34207 10.8474C3.92645 12.6335 5.5847 13.9466 7.55645 13.9893C6.02195 15.1896 4.07357 15.9129 1.96432 15.9129C1.59445 15.9129 1.2397 15.8964 0.884949 15.851C2.88282 17.1394 5.25057 17.875 7.80395 17.875C16.1034 17.875 20.6409 11 20.6409 5.04075C20.6409 4.84137 20.6341 4.64887 20.6244 4.45775C21.5196 3.8225 22.2717 3.02913 22.8849 2.11613Z"
+                                                fill="currentColor"
+                                            />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:">
+                                        <svg
+                                            width="23"
+                                            height="22"
+                                            viewBox="0 0 23 22"
+                                            fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="transition hover:scale-110 hover:text-secondary"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M7.75995 0H16.0099C19.8063 0 22.8849 3.07862 22.8849 6.875V15.125C22.8849 18.9214 19.8063 22 16.0099 22H7.75995C3.96357 22 0.884949 18.9214 0.884949 15.125V6.875C0.884949 3.07862 3.96357 0 7.75995 0ZM16.0099 19.9375C18.6637 19.9375 20.8224 17.7787 20.8224 15.125V6.875C20.8224 4.22125 18.6637 2.0625 16.0099 2.0625H7.75995C5.1062 2.0625 2.94745 4.22125 2.94745 6.875V15.125C2.94745 17.7787 5.1062 19.9375 7.75995 19.9375H16.0099Z"
+                                                fill="currentColor"
+                                            />
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M6.38495 11C6.38495 7.96263 8.84757 5.5 11.8849 5.5C14.9223 5.5 17.3849 7.96263 17.3849 11C17.3849 14.0374 14.9223 16.5 11.8849 16.5C8.84757 16.5 6.38495 14.0374 6.38495 11ZM8.44745 11C8.44745 12.8948 9.9902 14.4375 11.8849 14.4375C13.7797 14.4375 15.3224 12.8948 15.3224 11C15.3224 9.10388 13.7797 7.5625 11.8849 7.5625C9.9902 7.5625 8.44745 9.10388 8.44745 11Z"
+                                                fill="currentColor"
+                                            />
+                                            <circle cx="17.7975" cy="5.08737" r="0.732875" fill="currentColor" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                            <img src="assets/images/footer-shape.png" alt="footer-shape" class="absolute bottom-0 right-0 sm:left-0" />
+                            <img
+                                src="assets/images/footer-shape-dark.png"
+                                alt="footer-shape-dark"
+                                class="absolute bottom-0 right-0 hidden dark:block sm:left-0"
+                            />
+                        </div>
+                        <div>
+                            <ul class="flex flex-col gap-3 font-bold">
+                                <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Quick Menu</li>
+                                <li><a href="index.html" class="inline-block transition hover:scale-110 hover:text-secondary">Home</a></li>
+                                <li><a href="portfolio.html" class="inline-block transition hover:scale-110 hover:text-secondary">Portfolio</a></li>
+                                <li><a href="services.html" class="inline-block transition hover:scale-110 hover:text-secondary">Service</a></li>
+                                <li><a href="team.html" class="inline-block transition hover:scale-110 hover:text-secondary">Team</a></li>
+                                <li><a href="about-us.html" class="inline-block transition hover:scale-110 hover:text-secondary">About Us</a></li>
+                                <li><a href="career.html" class="inline-block transition hover:scale-110 hover:text-secondary">Career</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="flex flex-col gap-3 font-bold">
+                                <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Services</li>
+                                <li>
+                                    <a href="services-detail.html" class="inline-block transition hover:scale-110 hover:text-secondary">UI/UX Design</a>
+                                </li>
+                                <li>
+                                    <a href="services-detail.html" class="inline-block transition hover:scale-110 hover:text-secondary">Web Development</a>
+                                </li>
+                                <li>
+                                    <a href="services-detail.html" class="inline-block transition hover:scale-110 hover:text-secondary">Digital Marketing</a>
+                                </li>
+                                <li>
+                                    <a href="services-detail.html" class="inline-block transition hover:scale-110 hover:text-secondary">App Development</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="flex flex-col gap-3 font-bold">
+                                <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Legal</li>
+                                <li>
+                                    <a href="terms-conditions.html" class="inline-block transition hover:scale-110 hover:text-secondary">Terms & Conditions</a>
+                                </li>
+                                <li>
+                                    <a href="privacy-policy.html" class="inline-block transition hover:scale-110 hover:text-secondary">Privacy Policy</a>
+                                </li>
+                                <li><a href="faq.html" class="inline-block transition hover:scale-110 hover:text-secondary">FAQs</a></li>
+                                <li><a href="blog.html" class="inline-block transition hover:scale-110 hover:text-secondary">Blog</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="flex flex-col gap-3 font-bold">
+                                <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Information</li>
+                                <li>164 Brighton Ave, Allston, Maine, U.S. - 02134</li>
+                                <li>
+                                    <a href="tel:+(617) 254-2333" class="inline-block transition hover:scale-110 hover:text-secondary">+(617) 254-2333</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] py-5 dark:border-t-2 dark:border-white/5 dark:bg-none">
+                    <div class="container">
+                        <div class="flex flex-col items-center justify-between text-center font-bold dark:text-white md:flex-row">
+                            <div>
+                                Copyright© <span class="curr-year">2022</span>
+                                <a href="javascript:" class="text-primary transition hover:text-secondary">Plurk Technologies Pvt. Ltd.</a>
+                            </div>
+                            <div>Need help? Visit the <a href="contact-us.html" class="text-secondary transition hover:text-primary">Contact Us</a></div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Return to Top -->
+        <button type="button" id="scrollToTopBtn" class="fixed bottom-5 z-10 hidden animate-bounce ltr:right-5 rtl:left-5" onclick="scrollToTop()">
+            <div
+                class="group flex h-14 w-14 items-center justify-center rounded-full border border-black/20 bg-black text-white transition duration-500 hover:bg-secondary dark:bg-primary dark:hover:bg-secondary"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="h-6 w-6 transition group-hover:text-black dark:text-white"
+                >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                </svg>
+            </div>
+        </button>
+
+        <!-- Swiper Slider JS -->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <!-- Counter Js -->
+        <script src="assets/js/vanilla-counter.js"></script>
+        <!-- AOS Animation JS -->
+        <script src="assets/js/aos.js"></script>
+        <!-- FancyBox -->
+        <script src="assets/js/fancybox.umd.js"></script>
+        <!-- Custom Js -->
+        <script src="assets/js/custom.js"></script>
+
+        <script>
+            // Testimonial Slider
+            var swiper1 = new Swiper('.feedback-slider', {
+                loop: true,
+                slidesPerView: 'auto',
+                spaceBetween: 30,
+                speed: 1000,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    prevEl: '.feedback-slider-button-prev',
+                    nextEl: '.feedback-slider-button-next',
+                },
+            });
+
+            // Our Team
+
+            var swiper2 = new Swiper('.our-team', {
+                loop: true,
+                spaceBetween: 30,
+                centeredSlides: true,
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                    },
+                    1024: {
+                        slidesPerView: 5,
+                    },
+                },
+            });
+
+            var swiper3 = new Swiper('.best-snaps', {
+                loop: true,
+                slidesPerView: 2,
+                spaceBetween: 10,
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                    },
+                    1024: {
+                        slidesPerView: 2,
+                    },
+                },
+            });
+
+            // Counter Js
+            VanillaCounter();
+
+            //  Filter
+
+            const filters = document.querySelectorAll('.filter');
+
+            filters.forEach((filter) => {
+                filter.addEventListener('click', function () {
+                    let selectedFilter = filter.getAttribute('data-filter');
+                    let itemsToHide = document.querySelectorAll(`.projects .project:not([data-filter='${selectedFilter}'])`);
+                    let itemsToShow = document.querySelectorAll(`.projects [data-filter='${selectedFilter}']`);
+
+                    if (selectedFilter == 'all') {
+                        itemsToHide = [];
+                        itemsToShow = document.querySelectorAll('.projects [data-filter]');
+                    }
+
+                    filterMenu = document.querySelectorAll('.filters li.filter');
+                    filterMenu.forEach((el) => {
+                        el.classList.remove('active');
+                    });
+                    filter.classList.add('active');
+
+                    itemsToHide.forEach((el) => {
+                        el.classList.add('hidden');
+                        el.classList.remove('block');
+                    });
+
+                    itemsToShow.forEach((el) => {
+                        el.classList.remove('hidden');
+                        el.classList.add('block');
+                    });
+                });
+            });
+        </script>
+    </body>
+
+<!-- Mirrored from html.plurk.sbthemes.com/photography.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 May 2025 05:27:15 GMT -->
+</html>

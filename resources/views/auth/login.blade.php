@@ -10,10 +10,10 @@
     <meta name="keywords"
         content="admin template, Admiro admin template, best javascript admin, dashboard template, bootstrap admin template, responsive admin template, web app">
     <meta name="author" content="pixelstrap">
-    <title>Login - Focus Report</title>
+    <title>Login - {{ config('app.name') }}</title>
     <!-- Favicon icon-->
-    <link rel="icon" href="{{ asset('dashboard/assets') }}/images/logo/favicon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ asset('dashboard/assets') }}/images/logo/favicon.png" type="image/x-icon">
+    <link rel="icon" href="{{ asset('home') }}/assets/images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('home') }}/assets/images/logo.png" type="image/x-icon">
     <!-- Google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
@@ -34,6 +34,7 @@
     <!-- App css -->
     <link rel="stylesheet" href="{{ asset('dashboard/assets') }}/css/style.css">
     <link id="color" rel="stylesheet" href="{{ asset('dashboard/assets') }}/css/color-1.css" media="screen">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -50,25 +51,26 @@
             <div class="col-12 p-0">
                 <div class="login-card login-dark">
                     <div>
-                        <div><a class="logo" href="#"><img class="img-fluid for-light m-auto"
+                        {{-- <div><a class="logo" href="#"><img class="img-fluid for-light m-auto"
                                     src="{{ asset('dashboard/assets') }}/images/logo/logo2.png" alt="looginpage" ><img
                                     class="img-fluid for-dark" src="{{ asset('dashboard/assets') }}/images/logo/logo2.png" alt="logo"></a>
-                        </div>
+                        </div> --}}
+                        @include('validation')
                         <div class="login-main">
                             <form action="{{ route('login.post') }}" method="POST" class="theme-form">
                                 @csrf
                                 <h2 class="text-center">Masuk ke akun Anda</h2>
-                                <p class="text-center">Masukkan NRP dan kata sandi Anda untuk masuk.</p>
+                                <p class="text-center">Masukkan Username dan kata sandi Anda untuk masuk.</p>
                                 <div class="form-group">
-                                    <label class="col-form-label">Username/NRP</label>
-                                    <input class="form-control" type="text" required="" name="nik" placeholder="0123S">
+                                    <label class="col-form-label">Username</label>
+                                    <input class="form-control" type="text" required="" name="username" placeholder="Username" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Password</label>
                                     <div class="form-input position-relative">
                                         <input class="form-control" type="password" name="password" required=""
                                             placeholder="*********">
-                                        <div class="show-hide"><span class="show"> </span></div>
+                                        {{-- <div class="show-hide"><span class="show"> </span></div> --}}
                                     </div>
                                 </div>
                                 <div class="form-group mb-0 checkbox-checked">
@@ -80,7 +82,9 @@
                                         <button class="btn btn-primary btn-block w-100" type="submit">Masuk </button>
                                     </div>
                                 </div>
-
+                                <p class="mt-4 mb-0 text-center">Belum punya akun?<a class="ms-2" href="{{ route('register') }}">Daftar disini!</a></p>
+                                <hr>
+                                <p class="mt-0 mb-0 text-center"><a class="ms-2" href="{{ route('home.index') }}">Kembali ke home</a></p>
                             </form>
                         </div>
                     </div>

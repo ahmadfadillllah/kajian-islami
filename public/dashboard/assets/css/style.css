@@ -38855,7 +38855,7 @@ p.data-attributes svg {
   }
 }
 .user-profile .hovercard .cardheader {
-  background: url(../images/other-images/bg-profile.png);
+    background: url("/home/assets/images/sampul.jpg");
   background-size: cover;
   background-position: 10%;
   height: 470px;
