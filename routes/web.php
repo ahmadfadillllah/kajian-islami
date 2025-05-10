@@ -93,8 +93,12 @@ Route::group(['middleware' => ['auth']], function(){
 
     //Account
     Route::get('/account/index', [AccountController::class, 'index'])->name('account.index');
+    Route::post('/account/ubahPassword/{uuid}', [AccountController::class, 'ubahPassword'])->name('account.ubahPassword');
 
     //Users
     Route::get('/users/index', [UserController::class, 'index'])->name('user.index')->middleware('CheckRole'.':Admin');
+    Route::post('/users/insert', [UserController::class, 'insert'])->name('user.insert')->middleware('CheckRole'.':Admin');
+    Route::get('/users/statusEnabled/{uuid}', [UserController::class, 'statusEnabled'])->name('user.statusEnabled')->middleware('CheckRole'.':Admin');
+    Route::get('/users/resetPassword/{uuid}', [UserController::class, 'resetPassword'])->name('user.resetPassword')->middleware('CheckRole'.':Admin');
 
 });
