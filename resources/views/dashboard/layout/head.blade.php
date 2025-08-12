@@ -49,7 +49,7 @@
 
 <body>
 
-    <div class="tap-top"><i class="iconly-Arrow-Up icli"></i></div>
+    <div class="tap-top"><i data-feather="arrow-up"></i></div>
     <!-- tap on tap ends-->
     <!-- loader-->
     <div class="loader-wrapper">
