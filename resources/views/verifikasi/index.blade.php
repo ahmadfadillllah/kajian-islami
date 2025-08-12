@@ -11,11 +11,11 @@
                 <div class="card">
                     <div class="card-header pb-0 card-no-border d-flex justify-content-between align-items-center">
                         <h3 class="mb-0">Daftar Verifikasi</h3>
-                        @if (Auth::user()->role == 'Pengurus')
+                        {{-- @if (Auth::user()->role == 'Pengurus')
                         <a href="{{ route('tpa.insert') }}" class="btn btn-primary btn-sm" title="Tambah Data">
                             <i class="fi fi-rr-add"></i> Tambah Data
                         </a>
-                        @endif
+                        @endif --}}
                     </div>
 
                     <div class="card-body">
