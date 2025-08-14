@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Masjid;
 use App\Models\TPA;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Ramsey\Uuid\Uuid;
@@ -50,6 +51,7 @@ class TPAController extends Controller
                 'jenis' => $request->jenis,
                 'ustadz' => $request->ustadz,
                 'durasi' => $request->durasi,
+                'tanggal_kegiatan' => Carbon::createFromFormat('d/m/Y', $request->tanggalKegiatan)->format('Y-m-d'),
                 'keterangan' => $request->keterangan,
                 'deskripsi' => $request->deskripsi,
                 'streaming' => $request->streaming,
@@ -89,6 +91,7 @@ class TPAController extends Controller
                 'jenis' => $request->jenis,
                 'ustadz' => $request->ustadz,
                 'durasi' => $request->durasi,
+                'tanggal_kegiatan' => Carbon::createFromFormat('d/m/Y', $request->tanggalKegiatan)->format('Y-m-d'),
                 'keterangan' => $request->keterangan,
                 'masjid_id' => $request->masjid_id,
                 'deskripsi' => $request->deskripsi,

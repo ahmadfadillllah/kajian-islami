@@ -19,7 +19,9 @@ return new class extends Migration
             $table->string('nama')->nullable();
             $table->string('jenis')->nullable();
             $table->string('ustadz')->nullable();
+            $table->date('tanggal_kegiatan')->nullable();
             $table->string('durasi')->nullable();
+            $table->string('status')->nullable();
             $table->text('keterangan')->nullable();
             $table->text('type')->nullable();
             $table->text('deskripsi')->nullable();

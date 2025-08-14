@@ -28,9 +28,12 @@
                                         <th>Nama Pengajian</th>
                                         <th>Jenis Pengajian</th>
                                         <th>Nama Ustadz</th>
+                                        <th>Tanggal Kegiatan</th>
                                         <th>Durasi</th>
                                         <th>Type</th>
                                         <th>Harga</th>
+                                        <th>Status Manual</th>
+                                        <th>Status Actual</th>
                                         @if (Auth::user()->role == 'Pengurus')
                                         <th>Aksi</th>
                                         @endif
@@ -44,17 +47,32 @@
                                         <td>{{ $dp->nama }}</td>
                                         <td>{{ $dp->jenis }}</td>
                                         <td>{{ $dp->ustadz }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($dp->tanggal_kegiatan)->translatedFormat('d F Y') }}</td>
                                         <td>{{ $dp->durasi }}</td>
                                         <td>
                                             @if ($dp->type === 'Berbayar')
-                                                <span class="badge bg-danger">Berbayar</span>
+                                                <span class="badge bg-danger">{{ $dp->type }}</span>
                                             @elseif ($dp->type === 'Gratis')
-                                                <span class="badge bg-primary">Gratis</span>
+                                                <span class="badge bg-primary">{{ $dp->type }}</span>
                                             @else
                                                 <span class="badge bg-secondary">{{ $dp->type }}</span>
                                             @endif
                                         </td>
                                         <td>Rp{{ number_format($dp->harga, 0, ',', '.') }}</td>
+                                        <td>
+                                            @if ($dp->status === 'Belum Terlaksana')
+                                                <span class="badge bg-secondary">{{ $dp->status }}</span>
+                                            @else
+                                                <span class="badge bg-success">{{ $dp->status }}</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ($dp->tanggal_kegiatan >= \Carbon\Carbon::now())
+                                                <span class="badge bg-secondary">Belum Terlaksana</span>
+                                            @else
+                                                <span class="badge bg-success">Terlaksana</span>
+                                            @endif
+                                        </td>
                                         @if (Auth::user()->role == 'Pengurus')
                                             <td>
                                                 <ul class="action">

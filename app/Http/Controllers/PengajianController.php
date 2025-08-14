@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Masjid;
 use App\Models\Pengajian;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Ramsey\Uuid\Uuid;
@@ -49,7 +50,9 @@ class PengajianController extends Controller
                 'nama' => $request->nama,
                 'jenis' => $request->jenis,
                 'ustadz' => $request->ustadz,
+                'tanggal_kegiatan' => Carbon::createFromFormat('d/m/Y', $request->tanggalKegiatan)->format('Y-m-d'),
                 'durasi' => $request->durasi,
+                'status' => $request->status,
                 'keterangan' => $request->keterangan,
                 'deskripsi' => $request->deskripsi,
                 'streaming' => $request->streaming,
@@ -88,7 +91,9 @@ class PengajianController extends Controller
             Pengajian::where('uuid', $uuid) ->update([
                 'jenis' => $request->jenis,
                 'ustadz' => $request->ustadz,
+                'tanggal_kegiatan' => Carbon::createFromFormat('d/m/Y', $request->tanggalKegiatan)->format('Y-m-d'),
                 'durasi' => $request->durasi,
+                'status' => $request->status,
                 'keterangan' => $request->keterangan,
                 'masjid_id' => $request->masjid_id,
                 'deskripsi' => $request->deskripsi,

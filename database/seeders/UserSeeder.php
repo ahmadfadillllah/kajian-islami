@@ -25,5 +25,15 @@ class UserSeeder extends Seeder
             'password' => Hash::make('1234qwer'),
 
         ]);
+
+        User::insert([
+
+            'uuid' => (string) Uuid::uuid4()->toString(),
+            'username' => 'pengurus1',
+            'name' => 'Pengurus 1',
+            'role' => 'Pengurus',
+            'password' => Hash::make('123456'),
+
+        ]);
     }
 }

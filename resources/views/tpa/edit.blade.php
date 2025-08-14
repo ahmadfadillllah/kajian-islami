@@ -41,7 +41,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <div class="mb-3">
                                     <label class="form-label" for="jenisTPA">Jenis TPA</label>
                                     <input class="form-control" id="jenisTPA" type="text" name="jenis" value="{{ $dataTPA->jenis }}" required>
@@ -51,6 +51,13 @@
                                 <div class="mb-3">
                                     <label class="form-label" for="namaUstadz">Nama Ustadz</label>
                                     <input class="form-control" id="namaUstadz" type="text" name="ustadz" value="{{ $dataTPA->ustadz }}" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label class="form-label" for="tanggalKegiatan">Tanggal Kegiatan</label>
+                                    <input class="form-control" id="tanggalKegiatan" type="text" name="tanggalKegiatan"
+                                        value="{{ \Carbon\Carbon::parse($dataTPA->tanggal_kegiatan)->format('d/m/Y') }}">
                                 </div>
                             </div>
                         </div>
@@ -106,7 +113,11 @@
         </div>
     </div>
 </div>
-
+<script>
+    flatpickr("#tanggalKegiatan", {
+      dateFormat: "d/m/Y"
+    });
+  </script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const selectElement = document.getElementById('typeTPA');
@@ -131,25 +142,5 @@
     });
 </script>
 
-<script>
-    ClassicEditor
-        .create(document.querySelector('#editor'), {
-            toolbar: [
-                'undo', 'redo', '|',
-                'heading', '|',
-                'bold', 'italic', 'underline', 'strikethrough', '|',
-                'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', '|',
-                'alignment', '|',
-                'numberedList', 'bulletedList', '|',
-                'link', 'blockQuote', '|',
-                'insertTable', 'imageUpload'
-            ]
-        })
-        .then(editor => {
-            console.log('Editor aktif:', editor);
-        })
-        .catch(error => {
-            console.error('Editor gagal dimuat:', error);
-        });
-</script>
+@include('ckeditor.index')
 @include('dashboard.layout.footer')

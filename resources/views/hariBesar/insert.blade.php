@@ -42,16 +42,28 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <div class="mb-3">
                                     <label class="form-label" for="jenisHariBesar">Jenis Hari Besar</label>
                                     <input class="form-control" id="jenisHariBesar" type="text" name="jenis" required>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <div class="mb-3">
                                     <label class="form-label" for="namaPenceramah">Nama Penceramah</label>
                                     <input class="form-control" id="namaPenceramah" type="text" name="penceramah" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label class="form-label" for="namaImam">Nama Imam Masjid</label>
+                                    <input class="form-control" id="namaImam" type="text" name="imam" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label class="form-label" for="tanggalKegiatan">Tanggal Kegiatan</label>
+                                    <input class="form-control" id="tanggalKegiatan" type="text" name="tanggalKegiatan" required placeholder="dd/mm/yyyy">
                                 </div>
                             </div>
                         </div>
@@ -105,7 +117,11 @@
         </div>
     </div>
 </div>
-
+<script>
+    flatpickr("#tanggalKegiatan", {
+      dateFormat: "d/m/Y"
+    });
+  </script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const selectElement = document.getElementById('typeHariBesar');
@@ -141,25 +157,5 @@
     });
 </script>
 
-<script>
-    ClassicEditor
-        .create(document.querySelector('#editor'), {
-            toolbar: [
-                'undo', 'redo', '|',
-                'heading', '|',
-                'bold', 'italic', 'underline', 'strikethrough', '|',
-                'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', '|',
-                'alignment', '|',
-                'numberedList', 'bulletedList', '|',
-                'link', 'blockQuote', '|',
-                'insertTable', 'imageUpload'
-            ]
-        })
-        .then(editor => {
-            console.log('Editor aktif:', editor);
-        })
-        .catch(error => {
-            console.error('Editor gagal dimuat:', error);
-        });
-</script>
+@include('ckeditor.index')
 @include('dashboard.layout.footer')

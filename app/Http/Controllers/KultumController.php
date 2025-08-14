@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kultum;
 use App\Models\Masjid;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Ramsey\Uuid\Uuid;
@@ -49,6 +50,7 @@ class KultumController extends Controller
                 'judul' => $request->judul,
                 'ustadz' => $request->ustadz,
                 'durasi' => $request->durasi,
+                'tanggal_kegiatan' => Carbon::createFromFormat('d/m/Y', $request->tanggalKegiatan)->format('Y-m-d'),
                 'keterangan' => $request->keterangan,
                 'deskripsi' => $request->deskripsi,
                 'streaming' => $request->streaming,
@@ -89,6 +91,7 @@ class KultumController extends Controller
             Kultum::where('uuid', $uuid) ->update([
                 'ustadz' => $request->ustadz,
                 'durasi' => $request->durasi,
+                'tanggal_kegiatan' => Carbon::createFromFormat('d/m/Y', $request->tanggalKegiatan)->format('Y-m-d'),
                 'keterangan' => $request->keterangan,
                 'deskripsi' => $request->deskripsi,
                 'streaming' => $request->streaming,

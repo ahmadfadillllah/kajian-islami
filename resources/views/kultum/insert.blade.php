@@ -47,7 +47,13 @@
                                     <input class="form-control" id="namaUstadz" type="text" name="ustadz" required>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label class="form-label" for="tanggalKegiatan">Tanggal Kegiatan</label>
+                                    <input class="form-control" id="tanggalKegiatan" type="text" name="tanggalKegiatan" required placeholder="dd/mm/yyyy">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
                                 <div class="mb-3">
                                     <label class="form-label" for="durasiKultum">Durasi</label>
                                     <input class="form-control" id="durasiKultum" type="text" name="durasi" required>
@@ -99,7 +105,11 @@
         </div>
     </div>
 </div>
-
+<script>
+    flatpickr("#tanggalKegiatan", {
+      dateFormat: "d/m/Y"
+    });
+</script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const selectElement = document.getElementById('typeKultum');
@@ -135,25 +145,5 @@
     });
 </script>
 
-<script>
-    ClassicEditor
-        .create(document.querySelector('#editor'), {
-            toolbar: [
-                'undo', 'redo', '|',
-                'heading', '|',
-                'bold', 'italic', 'underline', 'strikethrough', '|',
-                'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', '|',
-                'alignment', '|',
-                'numberedList', 'bulletedList', '|',
-                'link', 'blockQuote', '|',
-                'insertTable', 'imageUpload'
-            ]
-        })
-        .then(editor => {
-            console.log('Editor aktif:', editor);
-        })
-        .catch(error => {
-            console.error('Editor gagal dimuat:', error);
-        });
-</script>
+@include('ckeditor.index')
 @include('dashboard.layout.footer')

@@ -41,7 +41,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <div class="mb-3">
                                     <label class="form-label" for="jenisPengajian">Jenis Pengajian</label>
                                     <input class="form-control" id="jenisPengajian" type="text" name="jenis" value="{{ $dataPengajian->jenis }}" required>
@@ -53,6 +53,13 @@
                                     <input class="form-control" id="namaUstadz" type="text" name="ustadz" value="{{ $dataPengajian->ustadz }}" required>
                                 </div>
                             </div>
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label class="form-label" for="tanggalKegiatan">Tanggal Kegiatan</label>
+                                    <input class="form-control" id="tanggalKegiatan" type="text" name="tanggalKegiatan"
+                                        value="{{ \Carbon\Carbon::parse($dataPengajian->tanggal_kegiatan)->format('d/m/Y') }}">
+                                </div>
+                            </div>
                         </div>
 
                         <div class="row">
@@ -62,13 +69,23 @@
                                     <input class="form-control" id="durasiPengajian" type="text" name="durasi" value="{{ $dataPengajian->durasi }}" required>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <div class="mb-3">
                                     <label class="form-label" for="typePengajian">Type</label>
                                     <select class="form-select" id="typePengajian" name="type">
                                         <option value="{{ $dataPengajian->type }}" selected>{{ $dataPengajian->type }}</option>
                                         <option value="Gratis">Gratis</option>
                                         <option value="Berbayar">Berbayar</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label class="form-label" for="statusPengajian">Status</label>
+                                    <select class="form-select" id="statusPengajian" name="status">
+                                        <option value="{{ $dataPengajian->status }}" selected>{{ $dataPengajian->status }}</option>
+                                        <option value="Terlaksana">Terlaksana</option>
+                                        <option value="Belum Terlaksana">Belum Terlaksana</option>
                                     </select>
                                 </div>
                             </div>
@@ -108,6 +125,12 @@
 </div>
 
 <script>
+    flatpickr("#tanggalKegiatan", {
+      dateFormat: "d/m/Y"
+    });
+  </script>
+
+<script>
     document.addEventListener("DOMContentLoaded", function () {
         const selectElement = document.getElementById('typePengajian');
         const hargaContainer = document.getElementById('hargaContainer');
@@ -131,25 +154,5 @@
     });
 </script>
 
-<script>
-    ClassicEditor
-        .create(document.querySelector('#editor'), {
-            toolbar: [
-                'undo', 'redo', '|',
-                'heading', '|',
-                'bold', 'italic', 'underline', 'strikethrough', '|',
-                'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', '|',
-                'alignment', '|',
-                'numberedList', 'bulletedList', '|',
-                'link', 'blockQuote', '|',
-                'insertTable', 'imageUpload'
-            ]
-        })
-        .then(editor => {
-            console.log('Editor aktif:', editor);
-        })
-        .catch(error => {
-            console.error('Editor gagal dimuat:', error);
-        });
-</script>
+@include('ckeditor.index')
 @include('dashboard.layout.footer')

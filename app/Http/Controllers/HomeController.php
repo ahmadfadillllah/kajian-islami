@@ -130,6 +130,7 @@ class HomeController extends Controller
         ->where('uuid', $uuid)
         ->first();
 
+
         return view('home.detail', compact('dataKajian'));
     }
 

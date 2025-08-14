@@ -18,6 +18,8 @@ return new class extends Migration
             $table->boolean('statusenabled')->default(1);
             $table->string('judul')->nullable();
             $table->string('ustadz')->nullable();
+            $table->date('tanggal_kegiatan')->nullable();
+            $table->time('waktu_kegiatan')->nullable();
             $table->string('durasi')->nullable();
             $table->text('keterangan')->nullable();
             $table->text('type')->nullable();

@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title fs-5" id="myExtraLargeModal">Tambah Masjid</h3>
+                <h3 class="modal-title fs-5" id="myExtraLargeModal">Ubah Password</h3>
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body dark-modal">
@@ -16,7 +16,7 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <button class="btn btn-primary" type="submit">Update Password</button>
+                        <button class="btn btn-primary" type="submit">Update</button>
                     </div>
                 </form>
             </div>

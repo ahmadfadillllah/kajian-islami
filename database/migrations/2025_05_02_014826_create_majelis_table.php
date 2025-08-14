@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('nama')->nullable();
             $table->string('jenis')->nullable();
             $table->string('kegiatan')->nullable();
+            $table->date('tanggal_kegiatan')->nullable();
             $table->text('keterangan')->nullable();
             $table->text('type')->nullable();
             $table->text('deskripsi')->nullable();

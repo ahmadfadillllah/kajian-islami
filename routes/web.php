@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HariBesarController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\KultumController;
 use App\Http\Controllers\MajelisController;
 use App\Http\Controllers\MasjidController;
@@ -87,6 +88,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/haribesar/edit/{uuid}', [HariBesarController::class, 'edit'])->name('haribesar.edit')->middleware('CheckRole'.':Pengurus');
     Route::post('/haribesar/update/{uuid}', [HariBesarController::class, 'update'])->name('haribesar.update')->middleware('CheckRole'.':Pengurus');
 
+    Route::post('/upload-image', [ImageUploadController::class, 'upload'])->name('uploadImage');
     //Contact
     Route::get('/contact/index', [ContactController::class, 'index'])->name('contact.index');
     Route::get('/contact/delete/{uuid}', [ContactController::class, 'delete'])->name('contact.delete')->middleware('CheckRole'.':Admin');

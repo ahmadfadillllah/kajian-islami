@@ -27,6 +27,7 @@
                                         <th>Lokasi</th>
                                         <th>Nama Majelis</th>
                                         <th>Jenis Majelis</th>
+                                        <th>Tanggal Kegiatan</th>
                                         <th>Kegiatan</th>
                                         <th>Type</th>
                                         <th>Harga</th>
@@ -42,6 +43,7 @@
                                         <td>{{ $ml->nama_masjid }}</td>
                                         <td>{{ $ml->nama }}</td>
                                         <td>{{ $ml->jenis }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($ml->tanggal_kegiatan)->translatedFormat('d F Y') }}</td>
                                         <td>{{ $ml->kegiatan }}</td>
                                         <td>
                                             @if ($ml->type === 'Berbayar')

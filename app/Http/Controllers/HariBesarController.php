@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\HariBesar;
 use App\Models\Masjid;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Ramsey\Uuid\Uuid;
@@ -49,6 +50,8 @@ class HariBesarController extends Controller
                 'nama' => $request->nama,
                 'jenis' => $request->jenis,
                 'penceramah' => $request->penceramah,
+                'imam' => $request->imam,
+                'tanggal_kegiatan' => Carbon::createFromFormat('d/m/Y', $request->tanggalKegiatan)->format('Y-m-d'),
                 'durasi' => $request->durasi,
                 'keterangan' => $request->keterangan,
                 'deskripsi' => $request->deskripsi,
@@ -89,6 +92,8 @@ class HariBesarController extends Controller
             HariBesar::where('uuid', $uuid) ->update([
                 'jenis' => $request->jenis,
                 'penceramah' => $request->penceramah,
+                'imam' => $request->imam,
+                'tanggal_kegiatan' => Carbon::createFromFormat('d/m/Y', $request->tanggalKegiatan)->format('Y-m-d'),
                 'durasi' => $request->durasi,
                 'keterangan' => $request->keterangan,
                 'deskripsi' => $request->deskripsi,

@@ -27,6 +27,7 @@
                                         <th>Lokasi</th>
                                         <th>Judul Kultum</th>
                                         <th>Nama Ustadz</th>
+                                        <th>Tangal Kegiatan</th>
                                         <th>Durasi</th>
                                         <th>Type</th>
                                         <th>Harga</th>
@@ -42,6 +43,7 @@
                                         <td>{{ $kt->nama_masjid }}</td>
                                         <td>{{ $kt->judul }}</td>
                                         <td>{{ $kt->ustadz }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($kt->tanggal_kegiatan)->translatedFormat('d F Y') }}</td>
                                         <td>{{ $kt->durasi }}</td>
                                         <td>
                                             @if ($kt->type === 'Berbayar')

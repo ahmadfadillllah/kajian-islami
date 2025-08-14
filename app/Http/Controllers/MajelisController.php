@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Majelis;
 use App\Models\Masjid;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Ramsey\Uuid\Uuid;
@@ -48,6 +49,7 @@ class MajelisController extends Controller
                 'nama' => $request->nama,
                 'jenis' => $request->jenis,
                 'kegiatan' => $request->kegiatan,
+                'tanggal_kegiatan' => Carbon::createFromFormat('d/m/Y', $request->tanggalKegiatan)->format('Y-m-d'),
                 'keterangan' => $request->keterangan,
                 'deskripsi' => $request->deskripsi,
                 'streaming' => $request->streaming,
@@ -87,6 +89,7 @@ class MajelisController extends Controller
             Majelis::where('uuid', $uuid) ->update([
                 'jenis' => $request->jenis,
                 'kegiatan' => $request->kegiatan,
+                'tanggal_kegiatan' => Carbon::createFromFormat('d/m/Y', $request->tanggalKegiatan)->format('Y-m-d'),
                 'keterangan' => $request->keterangan,
                 'deskripsi' => $request->deskripsi,
                 'streaming' => $request->streaming,

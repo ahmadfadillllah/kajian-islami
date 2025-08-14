@@ -28,6 +28,7 @@
                                         <th>Nama TPA</th>
                                         <th>Jenis TPA</th>
                                         <th>Nama Ustadz</th>
+                                        <th>Tanggal Kegiatan</th>
                                         <th>Durasi</th>
                                         <th>Type</th>
                                         <th>Harga</th>
@@ -44,6 +45,7 @@
                                         <td>{{ $tpa->nama }}</td>
                                         <td>{{ $tpa->jenis }}</td>
                                         <td>{{ $tpa->ustadz }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($tpa->tanggal_kegiatan)->translatedFormat('d F Y') }}</td>
                                         <td>{{ $tpa->durasi }}</td>
                                         <td>
                                             @if ($tpa->type === 'Berbayar')

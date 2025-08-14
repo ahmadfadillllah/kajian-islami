@@ -19,7 +19,7 @@
                         {{ strtoupper($dataKajian->kategori) }} | {{ $dataKajian->type }}
                     </p>
 
-                    @if ($dataKajian->streaming != null)
+                    @if ($dataKajian->streaming != null && $dataKajian->streaming != '-' && $dataKajian->streaming != '')
                     <a href="{{ $dataKajian->streaming }}" target="_blank" rel="noopener noreferrer"
                         class="group inline-flex items-center justify-center gap-4 rounded-full bg-secondary p-1 font-bold uppercase leading-none text-white duration-300 hover:bg-primary ltr:pl-5 rtl:pr-5">
                         Video Streaming
