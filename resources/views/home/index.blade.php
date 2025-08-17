@@ -339,7 +339,9 @@
                         <td class="p-2 border">
                             <a href="{{ route('home.detail', ['kategori' => $kajian->kategori, 'uuid' => $kajian->uuid]) }}" class="inline-block"> {{ $kajian->nama }} </a>
                         </td>
-                        <td class="p-2 border">{{ ucwords($kajian->kategori) }}</td>
+                        <td class="p-2 border">
+                            {{ ucwords(strtolower($kajian->kategori) === 'tpa' ? 'TPA' : ucwords(strtolower($kajian->kategori))) }}
+                        </td>
                         <td class="p-2 border">
                             @if ($kajian->type == 'Berbayar')
                             <span class="inline-block bg-danger px-4 py-1 text-xs capitalize text-white rounded">
