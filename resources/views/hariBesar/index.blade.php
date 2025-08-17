@@ -25,8 +25,8 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Lokasi</th>
-                                        <th>Nama Pengajian</th>
-                                        <th>Jenis Pengajian</th>
+                                        <th>Nama Hari Besar</th>
+                                        <th>Jenis Hari Besar</th>
                                         <th>Nama Penceramah</th>
                                         <th>Durasi</th>
                                         <th>Type</th>
