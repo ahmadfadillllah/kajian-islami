@@ -289,93 +289,107 @@
     </div>
 
     <section class="pt-12 pb-14 md:pb-[100px]">
-        <div class="container">
-            <!-- Filter Button -->
-            <div class="overflow-x-auto">
-                <ul
-                    class="filters portfolio-filter mx-auto flex w-max gap-7 whitespace-nowrap pb-2.5 font-bold dark:text-white">
-                    <li class="active filter" data-filter="all">
-                        <button type="button"
-                            class="rounded-[10px] bg-gray/5 py-4 px-5 leading-5 transition hover:bg-secondary hover:text-white">Semua</button>
-                    </li>
-                    <li class="filter" data-filter="pengajian">
-                        <button type="button"
-                            class="rounded-[10px] bg-gray/5 py-4 px-5 leading-5 transition hover:bg-secondary hover:text-white">Pengajian</button>
-                    </li>
-                    <li class="filter" data-filter="tpa">
-                        <button type="button"
-                            class="rounded-[10px] bg-gray/5 py-4 px-5 leading-5 transition hover:bg-secondary hover:text-white">TPA</button>
-                    </li>
-                    <li class="filter" data-filter="kultum">
-                        <button type="button"
-                            class="rounded-[10px] bg-gray/5 py-4 px-5 leading-5 transition hover:bg-secondary hover:text-white">Kultum</button>
-                    </li>
-                    <li class="filter" data-filter="majelis">
-                        <button type="button"
-                            class="rounded-[10px] bg-gray/5 py-4 px-5 leading-5 transition hover:bg-secondary hover:text-white">Majelis</button>
-                    </li>
-                    <li class="filter" data-filter="hari besar">
-                        <button type="button"
-                            class="rounded-[10px] bg-gray/5 py-4 px-5 leading-5 transition hover:bg-secondary hover:text-white">Hari
-                            Besar</button>
-                    </li>
-                </ul>
-            </div>
+    <div class="container">
+        <!-- Filter Button -->
+        <div class="overflow-x-auto">
+            <ul class="filters portfolio-filter mx-auto flex w-max gap-7 whitespace-nowrap pb-2.5 font-bold dark:text-white">
+                <li class="active filter" data-filter="all">
+                    <button type="button" class="rounded-[10px] bg-gray/5 py-4 px-5 leading-5 transition hover:bg-secondary hover:text-white">Semua</button>
+                </li>
+                <li class="filter" data-filter="pengajian">
+                    <button type="button" class="rounded-[10px] bg-gray/5 py-4 px-5 leading-5 transition hover:bg-secondary hover:text-white">Pengajian</button>
+                </li>
+                <li class="filter" data-filter="tpa">
+                    <button type="button" class="rounded-[10px] bg-gray/5 py-4 px-5 leading-5 transition hover:bg-secondary hover:text-white">TPA</button>
+                </li>
+                <li class="filter" data-filter="kultum">
+                    <button type="button" class="rounded-[10px] bg-gray/5 py-4 px-5 leading-5 transition hover:bg-secondary hover:text-white">Kultum</button>
+                </li>
+                <li class="filter" data-filter="majelis">
+                    <button type="button" class="rounded-[10px] bg-gray/5 py-4 px-5 leading-5 transition hover:bg-secondary hover:text-white">Majelis</button>
+                </li>
+                <li class="filter" data-filter="hari besar">
+                    <button type="button" class="rounded-[10px] bg-gray/5 py-4 px-5 leading-5 transition hover:bg-secondary hover:text-white">Hari Besar</button>
+                </li>
+            </ul>
+        </div>
 
-            <!-- Table -->
-            <div class="container mx-auto mt-8">
-    @foreach ($dataKajian->groupBy('kategori') as $kategori => $kajians)
-        <div class="category-section mb-8">
-            <h2 class="text-2xl font-bold mb-4">{{ ucwords(strtolower($kategori)) }}</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                @foreach ($kajians as $kajian)
-                    <div class="card border border-gray-300 rounded-lg p-4 shadow hover:shadow-lg transition">
-                        <h3 class="text-lg font-semibold">
-                            <a href="{{ route('home.detail', ['kategori' => $kajian->kategori, 'uuid' => $kajian->uuid]) }}" class="text-blue-600 hover:underline">
-                                {{ $kajian->nama }}
-                            </a>
-                        </h3>
-                        <p class="text-sm text-gray-600">
-                            Type:
-                            <span class="{{ $kajian->type == 'Berbayar' ? 'bg-danger' : 'bg-secondary' }} inline-block px-2 py-1 text-xs text-white rounded">
-                                {{ $kajian->type }}
-                            </span>
-                        </p>
-                        <p class="text-sm text-gray-600">
-                            Harga:
-                            @if ($kajian->type == 'Berbayar')
-                                Rp{{ number_format($kajian->harga, 0, ',', '.') }}
-                            @else
-                                -
-                            @endif
-                        </p>
-                        <p class="text-sm text-gray-600">
-                            Status:
-                            @if ($kajian->tanggal_kegiatan >= \Carbon\Carbon::now())
-                                <span class="badge bg-secondary">Belum Terlaksana</span>
-                            @else
-                                <span class="badge bg-success">Terlaksana</span>
-                            @endif
-                        </p>
-                        <div class="mt-4">
-                            <a href="#"
-                               onclick="handleDaftarClick(this)"
-                               data-type="{{ $kajian->type }}"
-                               data-uuid="{{ $kajian->uuid }}"
-                               data-kategori="{{ $kajian->kategori }}"
-                               class="inline-block bg-primary px-4 py-1 text-xs capitalize text-white rounded dark:bg-white dark:text-black dark:hover:bg-secondary transition">
-                                Daftar
-                            </a>
-                        </div>
+        <!-- Card Layout -->
+        <div class="container mx-auto mt-8">
+            @foreach ($dataKajian->groupBy('kategori') as $kategori => $kajians)
+                <div class="category-section mb-8" data-category="{{ strtolower($kategori) }}">
+                    <h2 class="text-2xl font-bold mb-4">{{ ucwords(strtolower($kategori)) }}</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        @foreach ($kajians as $kajian)
+                            <div class="card border border-gray-300 rounded-lg p-4 shadow hover:shadow-lg transition" data-filter="{{ strtolower($kajian->kategori) }}">
+                                <h3 class="text-lg font-semibold">
+                                    <a href="{{ route('home.detail', ['kategori' => $kajian->kategori, 'uuid' => $kajian->uuid]) }}" class="text-blue-600 hover:underline">
+                                        {{ $kajian->nama }}
+                                    </a>
+                                </h3>
+                                <p class="text-sm text-gray-600">
+                                    Type:
+                                    <span class="{{ $kajian->type == 'Berbayar' ? 'bg-danger' : 'bg-secondary' }} inline-block px-2 py-1 text-xs text-white rounded">
+                                        {{ $kajian->type }}
+                                    </span>
+                                </p>
+                                <p class="text-sm text-gray-600">
+                                    Harga:
+                                    @if ($kajian->type == 'Berbayar')
+                                        Rp{{ number_format($kajian->harga, 0, ',', '.') }}
+                                    @else
+                                        -
+                                    @endif
+                                </p>
+                                <p class="text-sm text-gray-600">
+                                    Status:
+                                    @if ($kajian->tanggal_kegiatan >= \Carbon\Carbon::now())
+                                        <span class="badge bg-secondary">Belum Terlaksana</span>
+                                    @else
+                                        <span class="badge bg-success">Terlaksana</span>
+                                    @endif
+                                </p>
+                                <div class="mt-4">
+                                    <a href="#"
+                                       onclick="handleDaftarClick(this)"
+                                       data-type="{{ $kajian->type }}"
+                                       data-uuid="{{ $kajian->uuid }}"
+                                       data-kategori="{{ $kajian->kategori }}"
+                                       class="inline-block bg-primary px-4 py-1 text-xs capitalize text-white rounded dark:bg-white dark:text-black dark:hover:bg-secondary transition">
+                                        Daftar
+                                    </a>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
-                @endforeach
-            </div>
+                </div>
+            @endforeach
         </div>
-    @endforeach
-</div>
+    </div>
+</section>
 
-        </div>
-    </section>
+<script>
+    // JavaScript for filtering functionality
+    document.querySelectorAll('.filter button').forEach(button => {
+        button.addEventListener('click', function() {
+            const filterValue = this.parentElement.getAttribute('data-filter');
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                if (filterValue === 'all' || card.getAttribute('data-filter') === filterValue) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Update active filter button
+            document.querySelector('.filters .active').classList.remove('active');
+            this.parentElement.classList.add('active');
+        });
+    });
+</script>
+
 
 </div>
 <script>
