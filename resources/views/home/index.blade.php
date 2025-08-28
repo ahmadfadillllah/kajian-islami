@@ -344,9 +344,9 @@
                                 <p class="text-sm text-gray-600">
                                     Status:
                                     @if ($kajian->tanggal_kegiatan >= \Carbon\Carbon::now())
-                                        <span class="badge bg-secondary">Belum Terlaksana</span>
+                                        <span class="bg-secondary">Belum Terlaksana</span>
                                     @else
-                                        <span class="badge bg-success">Terlaksana</span>
+                                        <span class="bg-success">Terlaksana</span>
                                     @endif
                                 </p>
                                 <div class="mt-4">
