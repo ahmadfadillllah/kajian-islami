@@ -323,67 +323,57 @@
             </div>
 
             <!-- Table -->
-            <table class="table-auto w-full mt-8 border border-gray-300 text-left text-sm">
-                <thead class="bg-gray-100">
-                    <tr>
-                        <th class="p-2 border">Nama Kegiatan</th>
-                        <th class="p-2 border">Kategori</th>
-                        <th class="p-2 border">Type</th>
-                        <th class="p-2 border">Harga</th>
-                        <th class="p-2 border">Status</th>
-                        <th class="p-2 border">Link</th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-                    @foreach ($dataKajian as $kajian)
-                    <tr class="fade" data-filter="{{ $kajian->kategori }}">
-                        <td class="p-2 border">
-                            <a href="{{ route('home.detail', ['kategori' => $kajian->kategori, 'uuid' => $kajian->uuid]) }}" class="inline-block"> {{ $kajian->nama }} </a>
-                        </td>
-                        <td class="p-2 border">
-                            {{ ucwords(strtolower($kajian->kategori) === 'tpa' ? 'TPA' : ucwords(strtolower($kajian->kategori))) }}
-                        </td>
-                        <td class="p-2 border">
-                            @if ($kajian->type == 'Berbayar')
-                            <span class="inline-block bg-danger px-4 py-1 text-xs capitalize text-white rounded">
+            <div class="container mx-auto mt-8">
+    @foreach ($dataKajian->groupBy('kategori') as $kategori => $kajians)
+        <div class="category-section mb-8">
+            <h2 class="text-2xl font-bold mb-4">{{ ucwords(strtolower($kategori)) }}</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                @foreach ($kajians as $kajian)
+                    <div class="card border border-gray-300 rounded-lg p-4 shadow hover:shadow-lg transition">
+                        <h3 class="text-lg font-semibold">
+                            <a href="{{ route('home.detail', ['kategori' => $kajian->kategori, 'uuid' => $kajian->uuid]) }}" class="text-blue-600 hover:underline">
+                                {{ $kajian->nama }}
+                            </a>
+                        </h3>
+                        <p class="text-sm text-gray-600">
+                            Type:
+                            <span class="{{ $kajian->type == 'Berbayar' ? 'bg-danger' : 'bg-secondary' }} inline-block px-2 py-1 text-xs text-white rounded">
                                 {{ $kajian->type }}
-                              </span>
-                            @else
-                            <span class="inline-block bg-secondary px-4 py-1 text-xs capitalize text-white rounded">
-                                {{ $kajian->type }}
-                              </span>
-                            @endif
-                          </td>
-                        <td class="p-2 border">
+                            </span>
+                        </p>
+                        <p class="text-sm text-gray-600">
+                            Harga:
                             @if ($kajian->type == 'Berbayar')
                                 Rp{{ number_format($kajian->harga, 0, ',', '.') }}
                             @else
                                 -
                             @endif
-                        </td>
-                        <td>
+                        </p>
+                        <p class="text-sm text-gray-600">
+                            Status:
                             @if ($kajian->tanggal_kegiatan >= \Carbon\Carbon::now())
                                 <span class="badge bg-secondary">Belum Terlaksana</span>
                             @else
                                 <span class="badge bg-success">Terlaksana</span>
                             @endif
-                        </td>
-                        <td class="p-2 border">
+                        </p>
+                        <div class="mt-4">
                             <a href="#"
                                onclick="handleDaftarClick(this)"
                                data-type="{{ $kajian->type }}"
-                                data-uuid="{{ $kajian->uuid }}"
-                                data-kategori="{{ $kajian->kategori }}"
+                               data-uuid="{{ $kajian->uuid }}"
+                               data-kategori="{{ $kajian->kategori }}"
                                class="inline-block bg-primary px-4 py-1 text-xs capitalize text-white rounded dark:bg-white dark:text-black dark:hover:bg-secondary transition">
                                 Daftar
                             </a>
-                        </td>
-                    </tr>
-                    @endforeach
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    @endforeach
+</div>
 
-                </tbody>
-
-            </table>
         </div>
     </section>
 
