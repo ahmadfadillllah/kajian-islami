@@ -57,6 +57,7 @@
                         </svg>
                     </a>
                 </li>
+                <a href="{{ route('home.index') }}" class="btn btn-primary">Kembali ke Home</a>
                 <li> <a class="dark-mode" href="javascript:void(0)">
                     <i class="fi fi-rr-dark-mode-alt"></i></a>
                 </li>

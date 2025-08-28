@@ -23,8 +23,13 @@
                     </div>
                     <div class="col-md-12">
                         <div class="mb-3">
-                            <label class="form-label" for="pengurusMasjid">Nama Pengurus</label>
-                            <input class="form-control" id="pengurusMasjid" type="text" name="pengurus" required>
+                            <label class="form-label" for="pengurusMasjid">Pengurus</label>
+                            <select class="form-control" name="pengurus" id="pengurusMasjid" required>
+                                <option selected disabled></option>
+                                @foreach ($dataPengurus as $dp)
+                                    <option value="{{ $dp->uuid }}">{{ $dp->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-12">

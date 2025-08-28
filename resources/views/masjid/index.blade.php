@@ -52,6 +52,9 @@
                                                                         <div class="title-bookmark">
                                                                             <h5 class="title_0">{{ $dm->nama }}</h5>
                                                                             <p class="weburl_0">
+                                                                                Pengurus: {{ $dm->nama_pengurus }}
+                                                                            </p>
+                                                                            <p class="weburl_0">
                                                                                 {{ $dm->alamat }}
                                                                             </p>
                                                                             @if (Auth::user()->role == 'Admin')
@@ -67,8 +70,8 @@
                                                                                 </div>
                                                                             @endif
                                                                             <div class="content-general">
-                                                                                <p class="desc_0">Pengurus: {{ $dm->pengurus }}</p><span
-                                                                                    class="collection_0">Imam Masjid: {{ $dm->imam }}</span>
+                                                                                <p class="desc_0">Pengurus: {{ $dm->nama_pengurus }}</p>
+                                                                                <span class="collection_0">Imam Masjid: {{ $dm->imam }}</span>
                                                                             </div>
                                                                         </div>
                                                                     </div>

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Masjid;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Ramsey\Uuid\Uuid;
 
@@ -12,8 +15,26 @@ class MasjidController extends Controller
     //
     public function index()
     {
-        $dataMasjid = Masjid::where('statusenabled', true)->get();
-        return view('masjid.index', compact('dataMasjid'));
+        $dataMasjid = DB::table('masjid as mj')->leftJoin('users as us', 'mj.pengurus', 'us.uuid')->select(
+            'mj.id',
+            'mj.uuid',
+            'mj.statusenabled',
+            'mj.nama',
+            'mj.alamat',
+            'mj.imam',
+            'mj.gambar',
+            'mj.pengurus as uuid_pengurus',
+            'us.name as nama_pengurus',
+            )->where('mj.statusenabled', true);
+
+        if(Auth::user()->role == 'Admin'){
+            $dataMasjid = $dataMasjid->get();
+        }else{
+            $dataMasjid = $dataMasjid->where('pengurus', Auth::user()->uuid)->get();
+        }
+        $dataPengurus = User::where('statusenabled', true)->where('role', 'Pengurus')->get();
+
+        return view('masjid.index', compact('dataMasjid', 'dataPengurus'));
     }
 
     public function insert(Request $request)

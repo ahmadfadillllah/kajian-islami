@@ -32,8 +32,7 @@
                                         <th>Durasi</th>
                                         <th>Type</th>
                                         <th>Harga</th>
-                                        <th>Status Manual</th>
-                                        <th>Status Actual</th>
+                                        <th>Status</th>
                                         @if (Auth::user()->role == 'Pengurus')
                                         <th>Aksi</th>
                                         @endif
@@ -59,13 +58,13 @@
                                             @endif
                                         </td>
                                         <td>Rp{{ number_format($dp->harga, 0, ',', '.') }}</td>
-                                        <td>
+                                        {{-- <td>
                                             @if ($dp->status === 'Belum Terlaksana')
                                                 <span class="badge bg-secondary">{{ $dp->status }}</span>
                                             @else
                                                 <span class="badge bg-success">{{ $dp->status }}</span>
                                             @endif
-                                        </td>
+                                        </td> --}}
                                         <td>
                                             @if ($dp->tanggal_kegiatan >= \Carbon\Carbon::now())
                                                 <span class="badge bg-secondary">Belum Terlaksana</span>

@@ -330,6 +330,7 @@
                         <th class="p-2 border">Kategori</th>
                         <th class="p-2 border">Type</th>
                         <th class="p-2 border">Harga</th>
+                        <th class="p-2 border">Status</th>
                         <th class="p-2 border">Link</th>
                     </tr>
                 </thead>
@@ -358,6 +359,13 @@
                                 Rp{{ number_format($kajian->harga, 0, ',', '.') }}
                             @else
                                 -
+                            @endif
+                        </td>
+                        <td>
+                            @if ($kajian->tanggal_kegiatan >= \Carbon\Carbon::now())
+                                <span class="badge bg-secondary">Belum Terlaksana</span>
+                            @else
+                                <span class="badge bg-success">Terlaksana</span>
                             @endif
                         </td>
                         <td class="p-2 border">

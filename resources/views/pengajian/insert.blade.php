@@ -78,24 +78,24 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="mb-3">
+                            <div class="col-md-3"id="hargaContainer" style="display: none;">
+                                {{-- <div class="mb-3">
                                     <label class="form-label" for="statusPengajian">Status</label>
                                     <select class="form-select" id="statusPengajian" name="status">
                                         <option value="Belum Terlaksana">Belum Terlaksana</option>
                                         <option value="Terlaksana">Terlaksana</option>
                                     </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6" id="hargaContainer" style="display: none;">
+                                </div> --}}
                                 <div class="mb-3">
                                     <label class="form-label" for="hargaPengajian">Harga</label>
                                     <input class="form-control" id="hargaPengajian" type="text" name="harga">
                                 </div>
+
                             </div>
+                        </div>
+
+                        <div class="row">
+
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label" for="streamingPengajian">Link Streaming</label>

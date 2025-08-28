@@ -31,6 +31,7 @@
                                         <th>Durasi</th>
                                         <th>Type</th>
                                         <th>Harga</th>
+                                        <th>Status</th>
                                         @if (Auth::user()->role == 'Pengurus')
                                         <th>Aksi</th>
                                         @endif
@@ -55,6 +56,13 @@
                                             @endif
                                         </td>
                                         <td>Rp{{ number_format($kt->harga, 0, ',', '.') }}</td>
+                                        <td>
+                                            @if ($kt->tanggal_kegiatan >= \Carbon\Carbon::now())
+                                                <span class="badge bg-secondary">Belum Terlaksana</span>
+                                            @else
+                                                <span class="badge bg-success">Terlaksana</span>
+                                            @endif
+                                        </td>
                                         @if (Auth::user()->role == 'Pengurus')
                                         <td>
                                             <ul class="action">

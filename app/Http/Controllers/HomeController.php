@@ -22,6 +22,7 @@ class HomeController extends Controller
             'nama',
             DB::raw("'pengajian' as kategori"),
             'type',
+            'tanggal_kegiatan',
             'harga'
         )->where('statusenabled', true);
 
@@ -30,6 +31,7 @@ class HomeController extends Controller
             'nama',
             DB::raw("'tpa' as kategori"),
             'type',
+            'tanggal_kegiatan',
             'harga'
         )->where('statusenabled', true);
 
@@ -38,6 +40,7 @@ class HomeController extends Controller
             'judul as nama',
             DB::raw("'kultum' as kategori"),
             'type',
+            'tanggal_kegiatan',
             'harga'
         )->where('statusenabled', true);
 
@@ -46,6 +49,7 @@ class HomeController extends Controller
             'nama',
             DB::raw("'majelis' as kategori"),
             'type',
+            'tanggal_kegiatan',
             'harga'
         )->where('statusenabled', true);
 
@@ -54,6 +58,7 @@ class HomeController extends Controller
             'nama',
             DB::raw("'hari besar' as kategori"),
             'type',
+            'tanggal_kegiatan',
             'harga'
         )->where('statusenabled', true);
 

@@ -23,7 +23,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             if (Auth::user()->statusenabled == true) {
-                return redirect()->route('home.index')->with('success', 'Selamat Datang');
+                return redirect()->route('dashboard.index')->with('success', 'Selamat Datang');
             } else {
                 Auth::logout();
                 $request->session()->invalidate();

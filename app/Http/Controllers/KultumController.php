@@ -6,6 +6,7 @@ use App\Models\Kultum;
 use App\Models\Masjid;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Ramsey\Uuid\Uuid;
 
@@ -28,7 +29,7 @@ class KultumController extends Controller
     public function insert()
     {
 
-        $dataMasjid = Masjid::where('statusenabled', true)->get();
+        $dataMasjid = Masjid::where('statusenabled', true)->where('pengurus', Auth::user()->uuid)->get();
 
         return view('kultum.insert', compact('dataMasjid'));
     }

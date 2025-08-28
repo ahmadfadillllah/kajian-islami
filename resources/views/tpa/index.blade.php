@@ -32,6 +32,7 @@
                                         <th>Durasi</th>
                                         <th>Type</th>
                                         <th>Harga</th>
+                                        <th>Status</th>
                                         @if (Auth::user()->role == 'Pengurus')
                                         <th>Aksi</th>
                                         @endif
@@ -54,6 +55,13 @@
                                                 <span class="badge bg-primary">Gratis</span>
                                             @else
                                                 <span class="badge bg-secondary">{{ $tpa->type }}</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ($tpa->tanggal_kegiatan >= \Carbon\Carbon::now())
+                                                <span class="badge bg-secondary">Belum Terlaksana</span>
+                                            @else
+                                                <span class="badge bg-success">Terlaksana</span>
                                             @endif
                                         </td>
                                         <td>Rp{{ number_format($tpa->harga, 0, ',', '.') }}</td>
